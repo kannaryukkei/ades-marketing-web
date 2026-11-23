@@ -67,13 +67,13 @@
 
 ## 5. Exploration and decision
 - Common Research & Experience Benchmark Pack: VALIDATED_WITH_LIMITATIONS; FROZEN 2026-11-24. Official market/context and SME website-quality sources, three opened Indonesian studio websites at text-extract level, additional search-only leads explicitly marked uninspected, four pinned OSI codebases with exact commits/files/licenses, and the Implementation Reference Blueprint are recorded above. Full visual reference quota and live external interactions remain NOT_VERIFIED due the browser/network block; this limitation is frozen and will not be presented as observed evidence.
-- Post-R1 visual north-star: NOT_CREATED (correctly; must be created only after the one R1 concept set is validated).
+- Post-R1 visual north-star: CREATED after the three R1 concept artifacts were committed and source-checked. Conversation artifact: `a_clean_modern_marketing_website_homepage_layout.png` (generated 2026-11-24; 1487×1058 RGB). It is a Lead-generated illustrative target, not a live page or documentary evidence. It suggests a warm editorial composition, clear service/product hierarchy, restrained organic illustration and a prominent WhatsApp CTA. R2 may adapt or reject it based on the three concepts and PRD; it is not a fourth candidate or pre-R1 constraint.
 - UI ecosystem/library research: IN_PROGRESS; one Astro/Tailwind/Preline template inspected (MIT) but LEARN-ONLY due unnecessary complexity; no library selected.
 - OSI: COMPLETE for this scope. Four independent repositories inspected at pinned commits, root MIT licenses verified, relevant source files read, patterns compared and dispositions/rights obligations recorded. All current code dispositions LEARN-ONLY; no code/assets copied.
 - Design-author roster: one operator-selected identity only — GPT GO / Lead = Execution Agent = Governance Lead; independent evaluators and Synthesizer NONE by explicit mode selection. One R1 set (3 concepts) followed by same-author R2.
-- Frozen candidate set: NONE.
-- R3: single-agent self-assessment only; independent jury/panel and reconciliation NOT_APPLICABLE.
-- Direction approval: NOT_RECEIVED; this is the separate operator approval required after R3 and before R4.
+- Frozen candidate set: three R1 concepts, frozen for same-author R2 review: (1) `r1/concept-01-editorial-clarity.html` — calm editorial serif-led layout, restrained terracotta/ivory, long-form clarity; (2) `r1/concept-02-signal-and-structure.html` — high-contrast modular grid, black/lime signal blocks, compact scannable offer and method; (3) `r1/concept-03-human-first-studio.html` — warm conversational studio tone, soft illustrative shapes, rounded cards and approachable pacing. Each is a separate self-contained HTML artifact with one H1, semantic main/nav, viewport metadata, native FAQ details, responsive media queries, reduced-motion rule, and supplied WhatsApp CTA. Exact commits: `03d0a2fa47e8af40415ad0b00854929df25d12b4`, `df45e2cab99bb30948ec86cea14bcabc5e26ba17`, `cb8a311be3b77ee022e228593bd280f690dfb6b4`. Re-fetched each file from GitHub and checked structural/source signals; no runtime JS or external assets/dependencies. Browser rendering of these actual artifacts has NOT_YET_BEEN_VERIFIED; the earlier Playwright smoke test covered controlled synthetic HTML only. Concept source completeness/provenance verified; no concept is selected yet.
+- R3: single-agent self-assessment only; independent jury/panel and reconciliation NOT_APPLICABLE. R1 is complete at source-artifact level; R2 is next.
+- Direction approval: NOT_RECEIVED; this is the separate operator approval required after R3 and before R4. PRD v1.1 approval authorizes R1 only, not direction approval or production.
 
 
 ## Research update — common pack / OSI evidence (2026-11-24)
@@ -129,6 +129,20 @@
 - Terminal and runtime: local executables available; repo build/serve cannot be attempted until source is locally transferred or network becomes available. Browser rendering of full website can potentially be completed by transferring all exact source and asset bytes through connector and rendering via local Playwright; this is not yet demonstrated end-to-end.
 - Image generation: no image-generation tool is exposed in this session's available tool list; do not claim generated assets or a north-star now. Image generation path requires re-check at post-R1 point.
 - Persistent Project Instructions: present in the operator task and supplied as current conversation instructions; native project-instruction discovery/inclusion telemetry is NOT_EXPOSED, so no stronger harness-level loading claim is made.
+
+
+### R1 — Divergent Design Lab (single-agent; 2026-11-24)
+- Author: operator-selected GPT GO identity (same Lead, Execution Agent and Governance Lead); no additional author, evaluator or jury added.
+- Frozen inputs: approved PRD v1.1, frozen common Research Pack and Starter Profile v0.1.0. No material changes made to those baselines.
+- Three materially distinct standalone HTML homepage concepts committed under `r1/`:
+  1. `r1/concept-01-editorial-clarity.html` — editorial, serif-led, quiet and explanatory; source 7,124 characters; commit `03d0a2fa47e8af40415ad0b00854929df25d12b4`; blob `31658ed28139775981d8121183eab8d6a35a2f55`.
+  2. `r1/concept-02-signal-and-structure.html` — bold high-contrast modular signal system; source 7,855 characters; commit `df45e2cab99bb30948ec86cea14bcabc5e26ba17`; blob `56d23110b2bdd6282cd8f48cfba094241cde57ae`.
+  3. `r1/concept-03-human-first-studio.html` — warm, conversational and approachable illustrated direction; source 9,607 characters; commit `cb8a311be3b77ee022e228593bd280f690dfb6b4`; blob `3c22925bcf00b345b407ce636d58eaacb46b7cea`.
+- All three independently re-fetched from GitHub. Source-level checks passed for Indonesian document language, viewport metadata, exactly one H1, semantic main/nav, WhatsApp destination, native details/summary FAQ, responsive media queries and reduced-motion rule. All are self-contained HTML/CSS, with no JavaScript, external asset or third-party dependency. No external source code or visual assets copied. No images are used in these concept files; the illustration-led direction uses CSS shapes, not client evidence.
+- Divergence assessment: the three differ in type system, colour/material logic, layout rhythm, content density and tone—not merely palette/copy. All share the approved business facts and CTA.
+- Limitations: source structure has been checked, but actual browser rendering of these three exact artifacts, responsive screenshots, keyboard/interaction checks and visual comparison are NOT_VERIFIED. Do not call the R1 visual QA complete. Controlled Playwright smoke test was not a test of these pages.
+- Post-R1 Lead north-star: generated after the concepts, stored as conversation artifact `a_clean_modern_marketing_website_homepage_layout.png`, 1487×1058 RGB. It proposes a fourth integrated visual target with warm ivory/forest-green/coral, editorial typography, illustrative website motif, Starter offer block, four-step process, FAQ and clear WhatsApp CTA. It is not a concept candidate, final page, or R2 answer; same-author R2 must audit the three concepts against PRD/research and may adapt/reject the north-star with reasons.
+- R1 source artifact set is frozen for R2; any change to a concept after this record requires a new version and explicit trace.
 
 ## 6. Build, assets and verification
 - Selected stack: NOT_SELECTED; likely static HTML/CSS/JS is the product default, subject to PRD and genuine requirements.
