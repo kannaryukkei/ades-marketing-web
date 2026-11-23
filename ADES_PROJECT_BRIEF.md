@@ -21,11 +21,11 @@
 - Design-author roster: NONE separately; Guide maps the single selected identity as author/execution agent in single-agent mode.
 - Agent capabilities: GitHub connector invoked successfully. Read access to Core and read/write repo permissions to website repository verified by metadata; read/write Content API exercised. Git, Node 22, npm, Chromium 144 and Playwright installed. Controlled HTML render smoke test PASS (limits recorded below); external browser navigation BLOCKED; local repo clone BLOCKED by DNS. Image generation NOT_EXPOSED. Project Instructions present in task context, native harness inclusion telemetry NOT_EXPOSED. No external-agent handoff required in this mode. Exact provider/model subfields remain NOT_EXPOSED; do not infer.
 - Current website branch / commit: `main`; active Brief initialized and now committed. Most recently independently fetched HEAD before this edit: `0307169437b45c24e8764cddefab78c78db6eec7`. The initial empty-repository condition is historical only.
-- Current stage / gate: G0 PASS; G1 IN_PROGRESS pending explicit version-bound approval of PRD v1.1. R1 not authorised.
-- Overall status: IN_PROGRESS.
+- Current stage / gate: G0 PASS; G1 PASS — operator explicitly approved PRD v1.1 and authorized R1 on 2026-11-24. R1 IN_PROGRESS; R2/R3/R4 not started.
+- Overall status: IN_PROGRESS — R1 authorized and underway.
 - Last verified state / date: 2026-11-24 Asia/Jakarta — Core baseline and Starter Profile verified; active website Brief committed; G0 PASS; local Playwright smoke passed; Research Pack frozen with external-browser limits; full PRD v1.0 presented.
-- Next action: operator to explicitly approve or request changes to PRD v1.1; after exact approval, freeze the approved PRD and begin R1. Owner: operator for approval; Lead for gated execution.
-- Approval or operator action required: explicitly approve PRD v1.1 as presented or request revisions. Operator-provided CTA: https://wa.me/6281246027946; response owner: Aman Nauli A.N., Owner of ADES. This route and owner are operator-supplied, not independently tested; pricing, service territory and proof remain omitted/clearly unresolved.
+- Next action: complete and validate three R1 concepts, create the post-R1 Lead visual north-star, then conduct same-author R2 synthesis. Owner: Lead/Execution Agent.
+- Approval or operator action required: PRD v1.1 explicitly approved by operator on 2026-11-24 with exact wording: “I explicitly approve ADES Marketing Web PRD v1.1, dated 24 November 2026, including its exact scope and constraints, and authorize R1.” Approval is version-bound to v1.1; no scope expansion. Operator-provided CTA: https://wa.me/6281246027946; response owner Aman Nauli A.N., Owner of ADES.
 
 ## 2. Business and visitor outcome
 - Offer / product / service: ADES offers Starter website design-and-development as a proven baseline: one-page, static-first landing page, one primary audience and one conversion goal, with discovery, research, design exploration/synthesis, frontend build, QA and handover under ADES workflow. Business package is in development/not production-approved; Custom is a future capability/not developed/not production-approved.
@@ -39,7 +39,7 @@
 - Operational/legal/privacy/asset constraints: studio development means synthetic/demo content is allowed only when plainly labelled; no fabricated testimonials, client results, awards or case studies. NARA example publication provenance/permission not yet verified. Nusa Forma imagery is synthetic concept imagery and must be labelled concept/demo, never client proof. No paid actions, external contact, DNS, deployment or public release authorised. No analytics/tracking/form collection planned unless approved later.
 
 ## 3. Approved scope
-- PRD version/date: v1.1 DRAFT, 2026-11-24; complete decision-bearing content re-presented in conversation after operator supplied CTA and response owner. Exact scope and destination are now specified; explicit version-bound approval is pending. v1.0 is superseded, not approved.
+- PRD version/date: v1.1 APPROVED, 2026-11-24; full decision-bearing content presented directly in conversation and explicitly approved by operator on 2026-11-24. v1.0 superseded and not approved.
 - Intended outcome and primary visitor journey: One-page marketing site that establishes ADES' role, explains the Starter offer and its boundaries, responsibly indicates Business/Custom maturity, demonstrates process and selected work only where provenance permits, answers key questions and leads interested visitors to the operator-supplied WhatsApp destination https://wa.me/6281246027946; response owner Aman Nauli A.N., Owner of ADES.
 - Pages/content/interactions (proposed, pending PRD): one route; hero/positioning; visitor problem/outcome; package comparison with clear availability states; process; trust/limitations; FAQ; closing WhatsApp CTA linking to https://wa.me/6281246027946. Anchor navigation; responsive layouts; no fake form. Portfolio/demo work excluded from proof until publication rights/provenance are confirmed.
 - Creative intent/brand constraints: supplied recommendation is precise, mature, trustworthy, modern and outcome-oriented; Indonesian-language, direct and non-hyperbolic. Suggested premium/editorial visual character is not approved brand identity. Avoid generic AI gradients/futurist jargon and avoid borrowing Zacks Detailing identity. No final visual system selected.
@@ -50,8 +50,8 @@
 - Acceptance criteria: Must satisfy approved PRD and Starter Profile: one responsive page, one primary audience/goal; facts/capability statuses accurate; no fabricated proof; working declared navigation/links/CTAs or disclosed unavailability; media rights/provenance documented and actual images load; deliberately composed small/medium/large responsive states; keyboard/focus/contrast/semantics/alt/reduced motion as relevant; no material overflow/runtime breakage or unresolved critical accessibility; security source/dependency/output review; render-based evidence; clean-checkout runbook/handover. Live DNS/TLS/headers are not claimed absent separately authorised deployment.
 - Material dependencies/unresolved decisions: verified contact destination and owner; public-market focus and area; business language; Starter price/inclusions/revisions/timing; ownership/support/domain/hosting statements; final logo/brand constraints; permission to publish NARA example assets/source/screens; target domain/host/costs. Draft can proceed with safe omissions/placeholders.
 - PRD presentation record: YES — full PRD v1.0 was shown, then superseded. Full PRD v1.1 with operator-supplied WhatsApp CTA and named response owner is now presented directly in conversation; decision summary, offer boundaries, visitor journey, scope, exclusions, content/proof, interactions, assets/rights, security/privacy, assumptions and observable acceptance criteria included.
-- Exact operator approval: NONE — awaiting explicit approval of PRD v1.1.
-- R1 authorised: NO.
+- Exact operator approval: “I explicitly approve ADES Marketing Web PRD v1.1, dated 24 November 2026, including its exact scope and constraints, and authorize R1.” Date: 2026-11-24. Exact version/scope: PRD v1.1.
+- R1 authorised: YES — explicit operator approval of PRD v1.1 received 2026-11-24.
 
 ## 4. Gate status
 
@@ -73,7 +73,7 @@
 - Design-author roster: one operator-selected identity only — GPT GO / Lead = Execution Agent = Governance Lead; independent evaluators and Synthesizer NONE by explicit mode selection. One R1 set (3 concepts) followed by same-author R2.
 - Frozen candidate set: NONE.
 - R3: single-agent self-assessment only; independent jury/panel and reconciliation NOT_APPLICABLE.
-- Direction approval: NOT_RECEIVED.
+- Direction approval: NOT_RECEIVED; this is the separate operator approval required after R3 and before R4.
 
 
 ## Research update — common pack / OSI evidence (2026-11-24)
