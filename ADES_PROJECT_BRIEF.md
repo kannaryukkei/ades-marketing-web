@@ -66,9 +66,9 @@
 | G6 — learning | NOT_STARTED | Post-handover. |
 
 ## 5. Exploration and decision
-- Common Research & Experience Benchmark Pack: IN_PROGRESS. Source references and applied pattern findings to be added after direct inspection; not frozen.
+- Common Research & Experience Benchmark Pack: IN_PROGRESS. Initial market/quality evidence and four-repository OSI source inspections, exact commits/file paths/licenses and provisional Implementation Reference Blueprint recorded above (§5). Visual benchmark is not frozen: directly inspected commercial niche-site coverage remains below Guide target; see limitations.
 - Post-R1 visual north-star: NOT_CREATED (correctly; must be created only after the one R1 concept set is validated).
-- UI ecosystem/library research: NOT_STARTED; no library choice presupposed.
+- UI ecosystem/library research: IN_PROGRESS; one Astro/Tailwind/Preline template inspected (MIT) but LEARN-ONLY due unnecessary complexity; no library selected.
 - OSI: IN_PROGRESS; targeted multi-source search and source/rights review pending.
 - Design-author roster: one operator-selected identity only — GPT GO / Lead = Execution Agent = Governance Lead; independent evaluators and Synthesizer NONE by explicit mode selection. One R1 set (3 concepts) followed by same-author R2.
 - Frozen candidate set: NONE.
