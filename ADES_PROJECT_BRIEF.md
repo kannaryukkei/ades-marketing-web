@@ -39,7 +39,7 @@
 - Operational/legal/privacy/asset constraints: studio development means synthetic/demo content is allowed only when plainly labelled; no fabricated testimonials, client results, awards or case studies. NARA example publication provenance/permission not yet verified. Nusa Forma imagery is synthetic concept imagery and must be labelled concept/demo, never client proof. No paid actions, external contact, DNS, deployment or public release authorised. No analytics/tracking/form collection planned unless approved later.
 
 ## 3. Approved scope
-- PRD version/date: NOT_YET_ISSUED; draft v1.0 to follow G1 research/discovery. No approval exists.
+- PRD version/date: v1.0 DRAFT, 2026-11-24; full presentation pending in Lead conversation. CTA endpoint/response owner remains unresolved; this version is not yet approval-ready.
 - Intended outcome and primary visitor journey: One-page marketing site that establishes ADES' role, explains the Starter offer and its boundaries, responsibly indicates Business/Custom maturity, demonstrates process and selected work only where provenance permits, answers key questions and leads interested visitors to a verified inquiry channel when supplied.
 - Pages/content/interactions (proposed, pending PRD): one route; hero/positioning; visitor problem/outcome; package comparison with clear availability states; evidence/demo work; process; trust/limitations; FAQ; closing CTA. Anchor navigation; responsive layouts; honest disabled/unavailable contact path until a real destination is provided. No fake form.
 - Creative intent/brand constraints: supplied recommendation is precise, mature, trustworthy, modern and outcome-oriented; Indonesian-language, direct and non-hyperbolic. Suggested premium/editorial visual character is not approved brand identity. Avoid generic AI gradients/futurist jargon and avoid borrowing Zacks Detailing identity. No final visual system selected.
@@ -49,7 +49,7 @@
 - Out of scope by default: backend, database, authentication, CMS, persistent contact form, CRM, payment, booking, custom app workflows, ongoing content management/maintenance, hosting operations, commissioned photography/paid assets, business/brand strategy and unapproved external services. Business/Custom delivery commitments excluded.
 - Acceptance criteria: Must satisfy approved PRD and Starter Profile: one responsive page, one primary audience/goal; facts/capability statuses accurate; no fabricated proof; working declared navigation/links/CTAs or disclosed unavailability; media rights/provenance documented and actual images load; deliberately composed small/medium/large responsive states; keyboard/focus/contrast/semantics/alt/reduced motion as relevant; no material overflow/runtime breakage or unresolved critical accessibility; security source/dependency/output review; render-based evidence; clean-checkout runbook/handover. Live DNS/TLS/headers are not claimed absent separately authorised deployment.
 - Material dependencies/unresolved decisions: verified contact destination and owner; public-market focus and area; business language; Starter price/inclusions/revisions/timing; ownership/support/domain/hosting statements; final logo/brand constraints; permission to publish NARA example assets/source/screens; target domain/host/costs. Draft can proceed with safe omissions/placeholders.
-- PRD presentation record: NO — not yet presented.
+- PRD presentation record: pending this conversation turn; not yet marked YES.
 - Exact operator approval: NONE.
 - R1 authorised: NO.
 
@@ -58,7 +58,7 @@
 | Gate | Status | Evidence / blocker |
 |---|---|---|
 | G0 — activation and access | IN_PROGRESS | Core identity/default branch/head/files and Starter Profile verified at one commit; website repo identity and GitHub permissions verified but is empty/uninitialised. Local browser/terminal and persistent-instruction evidence remain NOT_VERIFIED. |
-| G1 — discovery and scope | IN_PROGRESS | Intake interpreted; several material facts unresolved; public-source and OSI research plus PRD presentation remain. |
+| G1 — discovery and scope | IN_PROGRESS | Intake and source research reviewed; Research Pack frozen with explicit browser/reference limitations. PRD v1.0 is being presented; verified inquiry endpoint/response owner remains a material open decision; exact PRD approval not yet received. |
 | G2 — exploration and direction | NOT_STARTED | Awaiting approved PRD and frozen Research Pack. |
 | G3 — build | NOT_STARTED | Awaiting R1/R2/R3, operator direction approval and production. |
 | G4 — review | NOT_STARTED | Awaiting build/QA. |
