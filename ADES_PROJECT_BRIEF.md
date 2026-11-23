@@ -23,9 +23,9 @@
 - Current website branch / commit: `main`; active Brief initialized and now committed. Most recently independently fetched HEAD before this edit: `0307169437b45c24e8764cddefab78c78db6eec7`. The initial empty-repository condition is historical only.
 - Current stage / gate: G0 PASS; G1 IN_PROGRESS pending complete PRD presentation, one material CTA decision and explicit version-bound approval. R1 not authorised.
 - Overall status: IN_PROGRESS.
-- Last verified state / date: 2026-11-24 Asia/Jakarta — Core baseline and profile validated; website repo confirmed empty; active Brief seeded.
-- Next action: Lead completes public-source research and targeted OSI source inspection; prepares PRD. Owner: Lead.
-- Approval or operator action required: Before R1, explicit approval of full PRD v1.0. Material business details below are pending; conservative PRD will omit unsupported pricing/contact/territory/testimonials.
+- Last verified state / date: 2026-11-24 Asia/Jakarta — Core baseline and Starter Profile verified; active website Brief committed; G0 PASS; local Playwright smoke passed; Research Pack frozen with external-browser limits; full PRD v1.0 presented.
+- Next action: receive verified inquiry route and named response owner; then issue final PRD version and request explicit version-bound approval. Owner: operator for contact facts; Lead for PRD revision and approval gate.
+- Approval or operator action required: provide the real public inquiry destination (WhatsApp Business link or business email) and the person/role responsible for monitoring/responding. Then approve the final exact PRD version before R1. Pricing, service territory and proof remain omitted/clearly unresolved.
 
 ## 2. Business and visitor outcome
 - Offer / product / service: ADES offers Starter website design-and-development as a proven baseline: one-page, static-first landing page, one primary audience and one conversion goal, with discovery, research, design exploration/synthesis, frontend build, QA and handover under ADES workflow. Business package is in development/not production-approved; Custom is a future capability/not developed/not production-approved.
@@ -39,7 +39,7 @@
 - Operational/legal/privacy/asset constraints: studio development means synthetic/demo content is allowed only when plainly labelled; no fabricated testimonials, client results, awards or case studies. NARA example publication provenance/permission not yet verified. Nusa Forma imagery is synthetic concept imagery and must be labelled concept/demo, never client proof. No paid actions, external contact, DNS, deployment or public release authorised. No analytics/tracking/form collection planned unless approved later.
 
 ## 3. Approved scope
-- PRD version/date: v1.0 DRAFT, 2026-11-24; full presentation pending in Lead conversation. CTA endpoint/response owner remains unresolved; this version is not yet approval-ready.
+- PRD version/date: v1.0 DRAFT, 2026-11-24; complete decision-bearing text presented directly in conversation on 2026-11-24. CTA endpoint/response owner remains unresolved; v1.0 is not yet approval-ready and no approval has been requested.
 - Intended outcome and primary visitor journey: One-page marketing site that establishes ADES' role, explains the Starter offer and its boundaries, responsibly indicates Business/Custom maturity, demonstrates process and selected work only where provenance permits, answers key questions and leads interested visitors to a verified inquiry channel when supplied.
 - Pages/content/interactions (proposed, pending PRD): one route; hero/positioning; visitor problem/outcome; package comparison with clear availability states; evidence/demo work; process; trust/limitations; FAQ; closing CTA. Anchor navigation; responsive layouts; honest disabled/unavailable contact path until a real destination is provided. No fake form.
 - Creative intent/brand constraints: supplied recommendation is precise, mature, trustworthy, modern and outcome-oriented; Indonesian-language, direct and non-hyperbolic. Suggested premium/editorial visual character is not approved brand identity. Avoid generic AI gradients/futurist jargon and avoid borrowing Zacks Detailing identity. No final visual system selected.
@@ -49,7 +49,7 @@
 - Out of scope by default: backend, database, authentication, CMS, persistent contact form, CRM, payment, booking, custom app workflows, ongoing content management/maintenance, hosting operations, commissioned photography/paid assets, business/brand strategy and unapproved external services. Business/Custom delivery commitments excluded.
 - Acceptance criteria: Must satisfy approved PRD and Starter Profile: one responsive page, one primary audience/goal; facts/capability statuses accurate; no fabricated proof; working declared navigation/links/CTAs or disclosed unavailability; media rights/provenance documented and actual images load; deliberately composed small/medium/large responsive states; keyboard/focus/contrast/semantics/alt/reduced motion as relevant; no material overflow/runtime breakage or unresolved critical accessibility; security source/dependency/output review; render-based evidence; clean-checkout runbook/handover. Live DNS/TLS/headers are not claimed absent separately authorised deployment.
 - Material dependencies/unresolved decisions: verified contact destination and owner; public-market focus and area; business language; Starter price/inclusions/revisions/timing; ownership/support/domain/hosting statements; final logo/brand constraints; permission to publish NARA example assets/source/screens; target domain/host/costs. Draft can proceed with safe omissions/placeholders.
-- PRD presentation record: pending this conversation turn; not yet marked YES.
+- PRD presentation record: YES — full PRD v1.0 shown directly in conversation; decision summary, offer boundaries, visitor journey, scope, exclusions, content/proof, interactions, assets/rights, security/privacy, assumptions and observable acceptance criteria presented. One material CTA/response-owner decision remains pending.
 - Exact operator approval: NONE.
 - R1 authorised: NO.
 
@@ -66,10 +66,10 @@
 | G6 — learning | NOT_STARTED | Post-handover. |
 
 ## 5. Exploration and decision
-- Common Research & Experience Benchmark Pack: IN_PROGRESS. Initial market/quality evidence and four-repository OSI source inspections, exact commits/file paths/licenses and provisional Implementation Reference Blueprint recorded above (§5). Visual benchmark is not frozen: directly inspected commercial niche-site coverage remains below Guide target; see limitations.
+- Common Research & Experience Benchmark Pack: VALIDATED_WITH_LIMITATIONS; FROZEN 2026-11-24. Official market/context and SME website-quality sources, three opened Indonesian studio websites at text-extract level, additional search-only leads explicitly marked uninspected, four pinned OSI codebases with exact commits/files/licenses, and the Implementation Reference Blueprint are recorded above. Full visual reference quota and live external interactions remain NOT_VERIFIED due the browser/network block; this limitation is frozen and will not be presented as observed evidence.
 - Post-R1 visual north-star: NOT_CREATED (correctly; must be created only after the one R1 concept set is validated).
 - UI ecosystem/library research: IN_PROGRESS; one Astro/Tailwind/Preline template inspected (MIT) but LEARN-ONLY due unnecessary complexity; no library selected.
-- OSI: IN_PROGRESS; targeted multi-source search and source/rights review pending.
+- OSI: COMPLETE for this scope. Four independent repositories inspected at pinned commits, root MIT licenses verified, relevant source files read, patterns compared and dispositions/rights obligations recorded. All current code dispositions LEARN-ONLY; no code/assets copied.
 - Design-author roster: one operator-selected identity only — GPT GO / Lead = Execution Agent = Governance Lead; independent evaluators and Synthesizer NONE by explicit mode selection. One R1 set (3 concepts) followed by same-author R2.
 - Frozen candidate set: NONE.
 - R3: single-agent self-assessment only; independent jury/panel and reconciliation NOT_APPLICABLE.
