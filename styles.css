@@ -1,4 +1,4 @@
-:root{--paper:#f4f1e8;--ink:#183b32;--muted:#61736a;--line:#d6d9ce;--green:#244d3e;--leaf:#c6d8b7;--clay:#c96e4c;--white:#fffdf7;--serif:Georgia,"Times New Roman",serif;--sans:Arial,Helvetica,sans-serif;--max:1160px}
+:root{--paper:#f4f1e8;--ink:#183b32;--muted:#5b6d64;--line:#d6d9ce;--green:#244d3e;--leaf:#c6d8b7;--clay:#a65335;--white:#fffdf7;--serif:Georgia,"Times New Roman",serif;--sans:Arial,Helvetica,sans-serif;--max:1160px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:100px}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
@@ -80,6 +80,7 @@ a:focus-visible,summary:focus-visible{outline:3px solid var(--clay);outline-offs
 .closing-inner>div>p:last-child{max-width:590px;color:#cbd8ce;font-size:13px;line-height:1.75}
 .button-coral{background:var(--clay);white-space:nowrap}
 .button-coral:hover{background:#b85b3d}
+.closing .eyebrow{color:#f0a17f}
 .footer{display:flex;justify-content:space-between;gap:20px;padding:23px 0;color:var(--muted);font-size:10px}
 @media(max-width:850px){.container{width:calc(100% - 40px)}.desktop-nav{display:none}.mobile-menu{display:block}.hero{grid-template-columns:1fr;gap:34px;padding:62px 0}.hero-visual{max-width:720px}.section-grid{grid-template-columns:1fr;gap:18px}.offer{grid-template-columns:1fr}.offer-side{min-height:150px}.closing-inner{grid-template-columns:1fr;align-items:start}.button-coral{justify-self:start}}
 @media(max-width:600px){.container{width:calc(100% - 32px)}.header-inner{height:70px;gap:10px}.wordmark{font-size:21px}.wordmark span{font-size:7px;letter-spacing:1px}.button-small{padding:12px 11px;font-size:10px}.hero{padding:48px 0 52px}.hero h1{font-size:clamp(47px,12.4vw,66px);letter-spacing:-2.8px}.hero-lead{font-size:17px}.hero-actions{gap:16px}.hero-visual img{aspect-ratio:1.12;object-fit:cover}.band-inner{display:block}.band-inner span{display:block;margin-top:8px}.section{padding:62px 0}.section-content h2{font-size:clamp(36px,10vw,50px)}.problem-list,.capability-list{grid-template-columns:1fr}.problem-list article{padding-bottom:10px}.offer-main{padding:25px}.offer-main h3{font-size:40px}.offer-side{padding:23px}.steps{grid-template-columns:1fr 1fr;row-gap:24px}.trust-panel{grid-template-columns:1fr;gap:14px;padding:24px}.faq-list summary{font-size:18px}.closing{padding:58px 0}.closing h2{font-size:clamp(39px,10vw,56px)}.footer{display:block;line-height:2}}
