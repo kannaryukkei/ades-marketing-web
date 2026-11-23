@@ -93,3 +93,59 @@ a:focus-visible,summary:focus-visible{outline:3px solid var(--clay);outline-offs
   .button-small{padding:11px 9px;font-size:9px}
   .mobile-menu summary{padding:11px 9px}
 }
+
+/* ADES V1 refinement — editorial depth, purposeful feedback and progressive reveal.
+   Adapted from transferable Nusa Forma principles; no brand assets or page templates reused. */
+:root{--motion-fast:180ms;--motion-mid:340ms;--ease-ades:cubic-bezier(.22,.68,.18,1)}
+html{scroll-padding-top:112px}
+body{font-size:16px;line-height:1.72;background-color:var(--paper);background-image:radial-gradient(ellipse at 8% 8%,rgba(166,83,53,.075),transparent 30rem),radial-gradient(ellipse at 92% 24%,rgba(198,216,183,.22),transparent 34rem),repeating-linear-gradient(0deg,rgba(24,59,50,.018) 0 1px,transparent 1px 56px),linear-gradient(135deg,rgba(255,255,255,.28),transparent 52%)}
+.site-header{position:sticky;background:rgba(244,241,232,.92);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);transition:background-color var(--motion-mid) var(--ease-ades),box-shadow var(--motion-mid) var(--ease-ades)}
+.site-header:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:linear-gradient(90deg,var(--clay),var(--leaf));transform:scaleX(var(--scroll-progress,0));transform-origin:left center;pointer-events:none}
+.header-inner{position:relative}
+.desktop-nav a,.underlined-link,.footer a{transition:color var(--motion-mid) var(--ease-ades),border-color var(--motion-mid) var(--ease-ades)}
+.desktop-nav a:hover,.underlined-link:hover{color:var(--clay-dark)}
+.button{min-height:50px;box-shadow:0 5px 16px rgba(24,59,50,.08);transition:background-color var(--motion-mid) var(--ease-ades),color var(--motion-mid) var(--ease-ades),transform var(--motion-mid) var(--ease-ades),box-shadow var(--motion-mid) var(--ease-ades)}
+.button:hover{box-shadow:0 10px 24px rgba(24,59,50,.13)}
+.button:active{transform:translateY(1px) scale(.99)}
+.button:focus-visible,.desktop-nav a:focus-visible,.underlined-link:focus-visible,.mobile-menu summary:focus-visible,.mobile-menu nav a:focus-visible,.faq-list summary:focus-visible{outline:3px solid var(--clay);outline-offset:4px;box-shadow:0 0 0 5px rgba(166,83,53,.13)}
+.hero{position:relative;isolation:isolate;padding-top:clamp(76px,8vw,112px);padding-bottom:clamp(76px,8vw,112px)}
+.hero:before{content:"";position:absolute;z-index:-1;width:clamp(220px,30vw,420px);aspect-ratio:1;right:2%;top:10%;border:1px solid rgba(166,83,53,.15);border-radius:50%;box-shadow:0 0 0 24px rgba(166,83,53,.025),0 0 0 52px rgba(166,83,53,.018);pointer-events:none}
+.hero h1{letter-spacing:-.045em;text-wrap:balance}
+.hero-lead{font-size:clamp(17px,1.35vw,20px);line-height:1.72}
+.hero-visual{position:relative;isolation:isolate;padding:0 0 15px 15px}
+.hero-visual:before{content:"";position:absolute;z-index:-1;inset:22px -14px -2px 0;background:var(--leaf);opacity:.72}
+.hero-visual img{position:relative;box-shadow:0 22px 54px rgba(24,59,50,.14);transition:transform 900ms var(--ease-ades),box-shadow 500ms var(--ease-ades)}
+.hero-visual:hover img{transform:translateY(-3px);box-shadow:0 28px 64px rgba(24,59,50,.17)}
+.hero-visual figcaption{font-size:11px;line-height:1.6}
+.statement-band{position:relative;overflow:hidden;background:linear-gradient(105deg,#244d3e,#1d4035 58%,#2e5a47)}
+.statement-band:after{content:"";position:absolute;width:230px;aspect-ratio:1;right:8%;top:-145px;border:1px solid rgba(255,253,247,.2);border-radius:50%;box-shadow:0 0 0 24px rgba(255,253,247,.035),0 0 0 52px rgba(255,253,247,.025);pointer-events:none}
+.section{padding-block:clamp(76px,8vw,112px)}
+.section-index{font-size:11px;letter-spacing:.14em;line-height:1.6}
+.section-content h2{line-height:1.06;text-wrap:balance}
+.section-intro{font-size:16px;line-height:1.82}
+.problem-list article,.steps article,.capability,.offer,.trust-panel,.faq-list details{transition:transform var(--motion-mid) var(--ease-ades),background-color var(--motion-mid) var(--ease-ades),box-shadow var(--motion-mid) var(--ease-ades),border-color var(--motion-mid) var(--ease-ades)}
+.problem-list article:hover,.steps article:hover{transform:translateY(-3px)}
+.problem-list p,.steps p,.capability p:last-child,.offer-main>p:not(.eyebrow),.offer-side p,.trust-panel p,.faq-list details p{font-size:13px;line-height:1.8}
+.offer{box-shadow:0 14px 38px rgba(24,59,50,.055)}
+.offer-main{padding:clamp(26px,3.2vw,40px)}
+.offer-side{background:linear-gradient(145deg,#d5e2c9,#c6d8b7)}
+.capability{background:rgba(255,253,247,.44)}
+.capability:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(24,59,50,.08)}
+.capability-current{background:linear-gradient(145deg,#244d3e,#1b4034);box-shadow:0 12px 28px rgba(24,59,50,.12)}
+.trust-panel{background:linear-gradient(120deg,#e9e9df,#f0eee5);border:1px solid rgba(24,59,50,.08)}
+.faq-list details{padding-inline:14px}
+.faq-list details[open]{background:rgba(255,253,247,.62);padding-inline:18px;box-shadow:inset 3px 0 var(--clay)}
+.faq-list summary{min-height:64px;align-items:center;line-height:1.4}
+.faq-list summary:after{content:"";flex:0 0 10px;width:10px;height:10px;border-right:1.5px solid var(--clay);border-bottom:1.5px solid var(--clay);transform:rotate(45deg) translateY(-3px);transition:transform var(--motion-mid) var(--ease-ades)}
+.faq-list details[open] summary:after{transform:rotate(225deg) translate(-2px,-1px)}
+.faq-list details p{padding:0 26px 4px 0}
+.closing{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 88% 12%,rgba(198,216,183,.18),transparent 30rem),linear-gradient(118deg,#183b32,#244d3e 68%,#1c4034)}
+.closing:after{content:"";position:absolute;z-index:-1;right:-8%;top:-68%;width:clamp(280px,42vw,560px);aspect-ratio:1;border:1px solid rgba(255,253,247,.18);border-radius:50%;box-shadow:0 0 0 28px rgba(255,253,247,.035),0 0 0 64px rgba(255,253,247,.025);pointer-events:none}
+.closing h2{text-wrap:balance}
+.footer{font-size:11px;line-height:1.7}
+.js-enabled [data-reveal]{opacity:0;transform:translate3d(0,18px,0);transition:opacity 620ms var(--ease-ades),transform 680ms var(--ease-ades)}
+.js-enabled [data-reveal="right"]{transform:translate3d(18px,0,0)}
+.js-enabled [data-reveal].is-visible{opacity:1;transform:none}
+@media(max-width:850px){.hero:before{right:-4%;top:4%;opacity:.7}.hero-visual{margin-right:12px}.section{padding-block:clamp(68px,9vw,90px)}}
+@media(max-width:600px){html{scroll-padding-top:84px}.hero{padding-block:54px 62px}.hero:before{width:210px;right:-5%;top:25%;opacity:.55}.hero-visual{padding-left:10px;padding-bottom:10px;margin-right:9px}.hero-visual:before{inset:14px -9px -1px 0}.hero-visual figcaption{font-size:10px}.section{padding-block:66px}.faq-list details{padding-inline:8px}.faq-list details[open]{padding-inline:12px}.faq-list summary{min-height:60px;gap:12px}.faq-list details p{padding-right:8px}.closing:after{right:-34%;top:-32%;width:310px;opacity:.7}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.js-enabled [data-reveal]{opacity:1!important;transform:none!important}.hero-visual:hover img,.problem-list article:hover,.steps article:hover,.capability:hover{transform:none}}
