@@ -383,3 +383,12 @@ Allowed statuses: NOT_STARTED / IN_PROGRESS / PASS / FAIL / BLOCKED / NOT_VERIFI
 - Implementation branch: `fix/ades-type-motion-faq`; base: current `main`.
 - Changes: increase base/body and supporting text scale; enlarge principle index, headings and paragraph copy; increase FAQ/process/capability copy; harmonize easing curves for interactive affordances; wrap FAQ answer content in an animated grid-row container while retaining native `details/summary` semantics and reduced-motion overrides.
 - Verification status: implementation committed to branch by file updates; browser/rendered QA NOT_YET_VERIFIED. G4 remains pending operator review; no merge or release authorization.
+
+
+## R4 follow-up audit — visible type/motion and preview provenance (2026-11-24)
+- Operator reported no visible change after the prior three-point refinement.
+- Audit confirmed PR #3 was in fact merged to `main` at `4f2982bd9a0c86934c5e5f9873573b058ca0b39f`; prior assistant status message incorrectly said it was not merged.
+- Audit confirmed the merged CSS/JS contained the requested rules, but the prior implementation had not undergone rendered browser QA. The earlier operator preview instructions used a detached worktree; a server still serving that old worktree would remain on the old snapshot and would not reflect later `main` changes.
+- Follow-up branch: `fix/ades-visible-type-motion-qa`, based on current `main`.
+- Further changes limited to the same three points: stronger base/supporting type scale and section 05 hierarchy; more perceptible but restrained hover/focus motion for cards and principle rows; FAQ height animation rewritten to preserve current animated height when interrupted by rapid repeated toggles.
+- Verification: source-level presence checked only. Rendered browser QA remains NOT_YET_VERIFIED; do not mark G4 PASS on this basis. No deployment/public release.
