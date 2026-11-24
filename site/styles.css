@@ -145,6 +145,7 @@ a:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offs
  .process-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
  .closing-inner{grid-template-columns:1fr auto}.closing .eyebrow{grid-column:1/-1}
 }
+@media(max-width:850px){.process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){
  .nav-shell{min-height:70px}.desktop-nav{display:none}.mobile-menu{display:block}
  .hero{grid-template-columns:1fr;padding-top:60px;gap:38px}.hero-art{min-height:420px;max-width:620px;width:100%;margin-inline:auto}
