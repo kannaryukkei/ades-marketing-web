@@ -12,13 +12,14 @@
     };
     menu.addEventListener("toggle", sync);
     sync();
-    menu.addEventListener("keydown", (event) => {
+    document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && menu.open) {
+        event.preventDefault();
         menu.open = false;
         sync();
         summary.focus();
       }
-    });
+    }, true);
     menu.addEventListener("click", (event) => {
       const link = event.target.closest('a[href^="#"]');
       if (!link) return;
