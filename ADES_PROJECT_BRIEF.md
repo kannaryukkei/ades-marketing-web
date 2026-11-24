@@ -448,3 +448,13 @@ Allowed statuses: NOT_STARTED / IN_PROGRESS / PASS / FAIL / BLOCKED / NOT_VERIFI
 - Native `details/summary` remains the semantic fallback when JavaScript is unavailable. The custom animation handler only takes ownership after safe initial panel states are set.
 - Source checks: pending re-fetch and structural checks. Browser-rendered QA for open → close → reopen → repeated rapid reversals, all five panels, keyboard, reduced-motion and responsive viewports remains NOT_VERIFIED. No visual/behavioural pass is claimed.
 - Gate remains G4 IN_PROGRESS. No merge, deployment, DNS, spending, third-party contact or public release is authorized.
+
+
+## Redo — consolidated Signal Factory visual-system revision (2026-11-25)
+- Operator requested a fast improvement pass against the latest verified `main` of this repository. Baseline: `main` @ `cdff0286856bca0d0092cbadcccac11d9e6735c3` (verified latest commit at start of this pass).
+- Working branch: `redo/editorial-system-cleanup`, created from that exact baseline. `main` remains unchanged.
+- Primary correction: replaced the 33.9 KB accumulated stylesheet/override history with a consolidated 21.0 KB Signal Factory stylesheet. Retained the existing approved content, section structure, WhatsApp CTA, fictional Nusa Forma disclosure, HTML and JavaScript interaction behavior. No framework, dependency, backend, form submission or external asset added.
+- Visual-system changes: warm paper/forest/clay/signal palette; consistent display/body/mono type roles; clearer editorial grid and section hierarchy; rebuilt hero composition, offer block, capability index, showcase frame, process grid, principles, FAQ, closing CTA and footer; coherent responsive layouts at 1000/760/430px; visible focus styling and reduced-motion handling; unified transitions and hover affordances.
+- Source checks after re-fetch: CSS brace balance PASS; responsive breakpoints PASS; reduced-motion declarations PASS; visible focus selector PASS; FAQ motion hooks remain connected to existing JS PASS; scroll-reveal hooks remain connected PASS; HTML stylesheet/script references PASS; expected section anchors PASS; WhatsApp destination PASS; fictional concept disclosure PASS. The only remaining `!important` declarations are scoped to the reduced-motion safety override, not typography/cascade patching.
+- Browser-rendered QA: NOT_VERIFIED in this pass. No claim of pixel-level rendering, cross-browser behavior, contrast certification, performance or conversion improvement. In particular, the existing FAQ animation must still be checked in a browser after this stylesheet replacement.
+- G4 remains IN_PROGRESS. This is a review candidate on a separate branch; no PR opened, no merge to `main`, no deployment, DNS change or public release.
