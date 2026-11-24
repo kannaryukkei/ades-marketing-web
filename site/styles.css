@@ -239,3 +239,42 @@ a:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offs
 /* Contrast correction: saturated blue is not legible on the coral offer field. */
 .offer-section .section-index,.offer-section .section-top h2 em{color:var(--ink)}
 .offer-section .section-top h2 em{text-decoration:underline;text-decoration-color:var(--acid);text-decoration-thickness:.08em;text-underline-offset:.08em}
+
+
+/* V1 refinement: readable type scale, fluid affordances and accessible FAQ motion. */
+body{font-size:17px;line-height:1.7}
+.eyebrow,.section-index,.hero-foot,.art-index,.art-caption,.nav-cta,.text-link,.starter-label,.side-index,.side-foot,.available,.cap>span,.window-bar,.preview-figure figcaption,.step-no{font-size:11px}
+.desktop-nav a{font-size:11px}
+.site-footer{font-size:10px}
+.manifesto-bottom p,.starter-main>p,.showcase .section-intro{font-size:clamp(17px,1.55vw,20px)}
+.cap p,.process-grid p{font-size:15px;line-height:1.75}
+.principle-list article{grid-template-columns:76px minmax(0,1fr);gap:22px;padding:27px 0}
+.principle-list article>b{font-size:42px}
+.principle-list h3{font-size:clamp(24px,2.6vw,32px);margin-bottom:11px}
+.principle-list p{font-size:clamp(17px,1.45vw,19px);line-height:1.75}
+.principles .section-index{font-size:12px}
+.faq-list summary{font-size:clamp(18px,1.8vw,22px)}
+.faq-list details p{font-size:clamp(16px,1.4vw,18px);line-height:1.75}
+.button,.nav-cta,.text-link,.desktop-nav a,.mobile-menu summary,.mobile-menu nav a,.cap,.process-grid article,.principle-list article,.site-footer a,.hero-art,.ticker-toggle{
+  transition-timing-function:cubic-bezier(.22,.68,0,1.02);
+}
+.faq-list details{padding-block:20px}
+.faq-answer{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .42s cubic-bezier(.22,.68,0,1.02),opacity .28s ease}
+.faq-answer-inner{overflow:hidden;min-height:0}
+.faq-list details[open] .faq-answer{grid-template-rows:1fr;opacity:1}
+.faq-answer p{margin:0 30px 18px 0}
+.faq-list summary{transition:color .22s ease}
+.faq-list summary:hover{color:var(--blue)}
+.faq-list summary::after{transition:transform .34s cubic-bezier(.22,.68,0,1.02),color .22s ease}
+.faq-list details[open] summary::after{transform:rotate(45deg)}
+@media(max-width:430px){
+ .principle-list article{grid-template-columns:48px minmax(0,1fr);gap:14px;padding:22px 0}
+ .principle-list article>b{font-size:30px}
+ .principle-list h3{font-size:23px}
+ .principle-list p{font-size:16px;line-height:1.7}
+ .faq-list summary{font-size:17px}
+ .faq-list details p{font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){
+ .faq-answer,.faq-list summary,.faq-list summary::after{transition:none!important}
+}
