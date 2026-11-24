@@ -418,3 +418,12 @@ Allowed statuses: NOT_STARTED / IN_PROGRESS / PASS / FAIL / BLOCKED / NOT_VERIFI
 - Commits: CSS `2cc86fe25bd01039b2c3392a527c7532fa16f197`; JS `c34ad9243730a1fbc375e30ee7eaef3c6f10e519`; HTML `983fc3edacf02c21fe70087e94dfcdabbc295e88`.
 - Verification: source-level audit only; stylesheet brace balance, final selector presence, FAQ no-WAAPI path and showcase eager/no-reveal source checks to be recorded after re-fetch. Browser rendered QA remains NOT_YET_VERIFIED. Do not claim visual change or interaction pass until rendered at desktop/tablet/mobile and FAQ first-click plus screenshot first-scroll are tested.
 - Gate: G4 remains IN_PROGRESS; PR review and operator visual acceptance pending. No deployment, DNS or public release.
+
+
+## R4.3 — restore scroll reveal and responsive FAQ motion (2026-11-24)
+
+- Operator feedback: the typography/showcase fixes are good, but the scroll-reveal treatment was removed from the showcase and the FAQ accordion became rigid. Operator explicitly requested restoration of the reveal (slightly faster) and a genuinely animated FAQ.
+- Scope: motion only. Preserve the consolidated typography scale, eager/high-priority showcase image, content, layout, and existing product boundary.
+- Scroll reveal: restored `data-reveal="scale"` to the showcase preview figure; retained eager image loading and high fetch priority. Tightened reveal cadence to 0.42s opacity / 0.48s transform, reduced stagger from 65ms to 40ms, and adjusted IntersectionObserver activation to threshold 0.08 with a -4% lower root margin. Existing reduced-motion fallback remains.
+- FAQ: replaced the grid-track-only transition with a measured Web Animations API height/opacity sequence. Native `details/summary` semantics remain; summary clicks are handled without prematurely collapsing the answer, so close animation can finish. A WeakMap tracks active animation and desired state; rapid repeated toggles begin from the currently rendered height rather than snapping. First open measures after the disclosure is made renderable. Reduced-motion and browsers without WAAPI fall back to immediate native state.
+- Verification: source-level checks only at commit time. Browser/rendered motion QA is NOT_VERIFIED until first-open, close, rapid reversal, keyboard activation, reduced-motion, and reveal at desktop/tablet/mobile are inspected. No merge, deployment, DNS, spending, third-party contact or public release authorized. G4 remains IN_PROGRESS.
