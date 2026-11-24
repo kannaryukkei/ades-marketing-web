@@ -282,3 +282,48 @@ body{font-size:17px;line-height:1.7}
 /* The FAQ wrapper is height-animated by script in both directions. */
 .faq-answer{display:block;height:auto;overflow:hidden;opacity:1;transition:none}
 .faq-answer-inner{overflow:hidden}
+
+
+/* Stronger visible refinement: make hierarchy and interaction changes unmistakable. */
+body{font-size:18px;line-height:1.72}
+.hero-foot,.art-index,.art-caption,.starter-label,.side-index,.side-foot,.available,.cap>span,.window-bar,.preview-figure figcaption,.site-footer{font-size:11px}
+.desktop-nav a,.nav-cta,.text-link{font-size:12px}
+.manifesto-bottom p,.starter-main>p,.showcase .section-intro{font-size:clamp(18px,1.65vw,21px)}
+.cap p,.process-grid p{font-size:16px;line-height:1.75}
+.principles .section-index{font-size:13px}
+.principle-list article{grid-template-columns:82px minmax(0,1fr);gap:24px;padding:30px 0}
+.principle-list article>b{font-size:46px}
+.principle-list h3{font-size:clamp(27px,2.8vw,36px);line-height:1.05}
+.principle-list p{font-size:clamp(18px,1.6vw,21px);line-height:1.75}
+.faq-list summary{font-size:clamp(19px,1.9vw,23px)}
+.faq-list details p{font-size:clamp(17px,1.5vw,19px);line-height:1.75}
+.button,.nav-cta,.text-link,.desktop-nav a,.mobile-menu summary,.mobile-menu nav a,.cap,.process-grid article,.principle-list article,.site-footer a,.hero-art,.ticker-toggle{
+  transition-duration:.32s;
+  transition-timing-function:cubic-bezier(.2,.72,.2,1);
+}
+.cap:not(.capability-live):hover,.cap:not(.capability-live):focus-within{transform:translateY(-5px);background:rgba(241,239,223,.55)}
+.process-grid article:hover,.process-grid article:focus-within{transform:translateY(-4px);background:rgba(17,18,14,.2)}
+.principle-list article:hover,.principle-list article:focus-within{padding-left:14px;background:rgba(36,69,255,.07)}
+.principle-list article>b{transition:transform .32s cubic-bezier(.2,.72,.2,1),color .32s}
+.principle-list article:hover>b,.principle-list article:focus-within>b{transform:translateX(5px);color:var(--blue)}
+.faq-list details{padding-block:22px}
+.faq-list summary{transition:color .25s ease}
+.faq-list summary:hover,.faq-list summary:focus-visible{color:var(--blue)}
+.faq-list summary::after{content:"+";transition:transform .42s cubic-bezier(.2,.72,.2,1),color .25s}
+.faq-list details[open] summary::after{content:"+";transform:rotate(45deg)}
+.faq-answer{display:block;overflow:hidden;height:auto;opacity:1}
+.faq-answer-inner{overflow:hidden}
+.faq-answer p{margin:0 30px 20px 0}
+@media(max-width:430px){
+ body{font-size:17px}
+ .principle-list article{grid-template-columns:48px minmax(0,1fr);gap:14px;padding:24px 0}
+ .principle-list article>b{font-size:32px}
+ .principle-list h3{font-size:25px}
+ .principle-list p{font-size:17px;line-height:1.72}
+ .faq-list summary{font-size:18px}
+ .faq-list details p{font-size:17px}
+}
+@media(prefers-reduced-motion:reduce){
+ .cap:not(.capability-live):hover,.process-grid article:hover,.principle-list article:hover{transform:none}
+ .principle-list article>b{transition:none}
+}
