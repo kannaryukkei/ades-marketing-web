@@ -137,6 +137,27 @@
     });
   }
 
+  // Nusa Forma showcase: live local iframe, with fullscreen and new-tab fallback.
+  const previewFrame = document.querySelector("#nusa-forma-frame");
+  const previewFullscreen = document.querySelector(".preview-fullscreen");
+  const previewShell = document.querySelector("#nusa-forma-preview");
+  if (previewFrame && previewFullscreen && previewShell) {
+    previewFullscreen.addEventListener("click", async () => {
+      try {
+        if (document.fullscreenElement === previewShell) await document.exitFullscreen();
+        else if (previewShell.requestFullscreen) await previewShell.requestFullscreen();
+        else window.open(previewFrame.src, "_blank", "noopener,noreferrer");
+      } catch {
+        window.open(previewFrame.src, "_blank", "noopener,noreferrer");
+      }
+    });
+    document.addEventListener("fullscreenchange", () => {
+      const active = document.fullscreenElement === previewShell;
+      previewFullscreen.setAttribute("aria-label", active ? "Keluar dari layar penuh" : "Tampilkan layar penuh");
+      previewFullscreen.innerHTML = active ? 'Keluar layar penuh <span aria-hidden="true">⛶</span>' : 'Layar penuh <span aria-hidden="true">⛶</span>';
+    });
+  }
+
   const revealItems = [...document.querySelectorAll("[data-reveal]")];
   if (!reduceMotion.matches && "IntersectionObserver" in window && revealItems.length) {
     root.classList.add("js-ready");
