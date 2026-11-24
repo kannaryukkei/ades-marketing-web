@@ -436,3 +436,15 @@ Allowed statuses: NOT_STARTED / IN_PROGRESS / PASS / FAIL / BLOCKED / NOT_VERIFI
 - Scope is limited to FAQ markup, FAQ motion CSS and removal of FAQ JS. Typography, scroll reveal, showcase image loading, content and all other sections are preserved.
 - Verification at commit: source inspection only. Browser-rendered QA for all five first-open/close interactions, keyboard, rapid toggling and reduced-motion remains NOT_VERIFIED. Do not claim the FAQ is fixed visually until the operator or Lead browser verifies it.
 - No deployment, DNS, public release, spending or third-party contact authorized. G4 remains IN_PROGRESS.
+
+
+## R4.5 — FAQ bidirectional, interruption-safe motion (2026-11-24)
+
+- Operator reported a repeatable regression: first open appears smooth, but closing is abrupt and later opens become rigid. This is treated as a failed interaction, not an operator preview issue.
+- Full source audit of current `main` confirmed accumulated FAQ CSS from multiple iterations: grid-row transitions, `height:0`, `height:auto`, `transition:none!important`, and later specificity overrides coexisted. Native `details` also removes its closed content from layout immediately, so a CSS-only descendant transition cannot reliably animate the closing edge.
+- Correction branch: `fix/ades-faq-interruption-safe-motion`, based on `main` at `cd5aebc254b7c859d5ea9c967c33d7bc8dae5c2a`.
+- Consolidated FAQ motion CSS: removed legacy FAQ-answer animation rules and left one neutral fallback plus a JS-enhanced state. Existing type scale, page layout, content, reveal, showcase and non-FAQ interactions remain unchanged.
+- Replaced the no-op FAQ JS path with one measured Web Animations API controller. It captures the currently painted height/opacity before cancelling an active animation, reverses from that exact frame, computes the target intrinsic height, and finalizes to `height:auto` when open or native closed state when shut. It handles repeated toggles during either direction, synchronizes `aria-expanded`, supports summary click/keyboard-generated click, and immediately applies state for reduced-motion or browsers without WAAPI.
+- Native `details/summary` remains the semantic fallback when JavaScript is unavailable. The custom animation handler only takes ownership after safe initial panel states are set.
+- Source checks: pending re-fetch and structural checks. Browser-rendered QA for open → close → reopen → repeated rapid reversals, all five panels, keyboard, reduced-motion and responsive viewports remains NOT_VERIFIED. No visual/behavioural pass is claimed.
+- Gate remains G4 IN_PROGRESS. No merge, deployment, DNS, spending, third-party contact or public release is authorized.
