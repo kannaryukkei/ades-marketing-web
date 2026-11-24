@@ -109,7 +109,7 @@ a:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offs
 .truth-note b{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase}
 .process-section{background:var(--blue);color:white}
 .process-section .section-index,.process-section .section-top h2 em{color:var(--acid)}
-.process-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:2px solid white;border-left:2px solid white}
+.process-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid white;border-left:2px solid white}
 .process-grid article{min-height:245px;padding:clamp(16px,2vw,26px);border-right:2px solid white;border-bottom:2px solid white;min-width:0}
 .step-no{color:var(--acid);font-size:13px}
 .process-grid h3{font:900 clamp(24px,2.5vw,34px)/1 var(--display);text-transform:uppercase;margin:40px 0 14px}
