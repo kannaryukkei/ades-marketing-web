@@ -66,71 +66,7 @@
   }
 
 
-  // Keep native details/summary semantics, but animate measured answer height.
-  // The summary click is intercepted so the panel stays renderable during close.
-  const faqItems = [...document.querySelectorAll(".faq-list details")];
-  const faqAnimations = new WeakMap();
-  const faqExpanded = new WeakMap();
-  const faqGeneration = new WeakMap();
-  faqItems.forEach((details) => {
-    const summary = details.querySelector("summary");
-    const content = [...details.children].filter((node) => node !== summary);
-    if (!summary || !content.length) return;
-
-    const answer = document.createElement("div");
-    answer.className = "faq-answer";
-    const inner = document.createElement("div");
-    inner.className = "faq-answer-inner";
-    content.forEach((node) => inner.append(node));
-    answer.append(inner);
-    details.append(answer);
-    faqExpanded.set(details, details.open);
-    answer.style.height = details.open ? "auto" : "0px";
-    answer.style.opacity = details.open ? "1" : "0";
-
-    summary.addEventListener("click", (event) => {
-      event.preventDefault();
-      const shouldOpen = !faqExpanded.get(details);
-      faqExpanded.set(details, shouldOpen);
-      const generation = (faqGeneration.get(details) || 0) + 1;
-      faqGeneration.set(details, generation);
-
-      // Preserve the exact in-flight visual height before cancelling an older animation.
-      const currentHeight = answer.getBoundingClientRect().height;
-      const currentOpacity = Number.parseFloat(getComputedStyle(answer).opacity) || 0;
-      const previous = faqAnimations.get(details);
-      if (previous) previous.cancel();
-
-      if (shouldOpen) details.open = true;
-      answer.style.height = `${currentHeight}px`;
-      answer.style.opacity = String(currentOpacity);
-
-      if (reduceMotion.matches || typeof answer.animate !== "function") {
-        details.open = shouldOpen;
-        answer.style.height = shouldOpen ? "auto" : "0px";
-        answer.style.opacity = shouldOpen ? "1" : "0";
-        return;
-      }
-
-      requestAnimationFrame(() => {
-        if (faqGeneration.get(details) !== generation) return;
-        const from = answer.getBoundingClientRect().height;
-        const to = shouldOpen ? answer.scrollHeight : 0;
-        const animation = answer.animate(
-          [{ height: `${from}px`, opacity: currentOpacity }, { height: `${to}px`, opacity: shouldOpen ? 1 : 0 }],
-          { duration: 420, easing: "cubic-bezier(.16,1,.3,1)" }
-        );
-        faqAnimations.set(details, animation);
-        animation.onfinish = () => {
-          if (faqGeneration.get(details) !== generation || faqExpanded.get(details) !== shouldOpen) return;
-          faqAnimations.delete(details);
-          details.open = shouldOpen;
-          answer.style.height = shouldOpen ? "auto" : "0px";
-          answer.style.opacity = shouldOpen ? "1" : "0";
-        };
-      });
-    });
-  });
+  // FAQ uses native details/summary and CSS-only disclosure motion.
 
   const revealItems = [...document.querySelectorAll("[data-reveal]")];
   if (!reduceMotion.matches && "IntersectionObserver" in window && revealItems.length) {
