@@ -327,3 +327,71 @@ body{font-size:18px;line-height:1.72}
  .cap:not(.capability-live):hover,.process-grid article:hover,.principle-list article:hover{transform:none}
  .principle-list article>b{transition:none}
 }
+
+
+/* R4 refinement: raise the complete supporting-type floor and clarify interaction timing. */
+body{font-size:18px;line-height:1.75}
+.skip-link{font-size:14px}
+.wordmark span{font-size:10px;line-height:1.5}
+.eyebrow,.section-index,.hero-foot,.art-index,.art-caption,.nav-cta,.text-link,
+.starter-label,.side-index,.side-foot,.available,.cap>span,.window-bar,
+.preview-figure figcaption,.truth-note b,.step-no,.hero-index,.site-footer,
+.desktop-nav a,.mobile-menu summary,.mobile-menu nav a,.ticker-toggle{
+  font-size:12px;line-height:1.6
+}
+.button{font-size:13px}
+.hero-foot{gap:12px}
+.hero-index{padding-top:14px}
+.manifesto-bottom p,.starter-main>p,.showcase .section-intro{font-size:clamp(18px,1.65vw,22px);line-height:1.75}
+.starter-side li{font-size:15px;line-height:1.65}
+.cap p,.process-grid p{font-size:17px;line-height:1.78}
+.truth-note{font-size:14px;line-height:1.75}
+.truth-note b{font-size:12px}
+.principle-list h3{font-size:clamp(28px,2.9vw,37px);line-height:1.08}
+.principle-list p{font-size:clamp(18px,1.65vw,21px);line-height:1.78}
+.faq-list summary{font-size:clamp(19px,1.9vw,23px);line-height:1.45}
+.faq-list details p{font-size:clamp(17px,1.5vw,19px);line-height:1.78}
+.preview-figure figcaption{line-height:1.65}
+.site-footer{line-height:1.7}
+.ticker-toggle{min-height:40px;padding:8px 11px}
+.mobile-menu summary{min-height:42px}
+.principle-list article{
+  position:relative;
+  padding:30px 0;
+  transform:translateX(0);
+  transition:transform .48s cubic-bezier(.16,1,.3,1),background-color .48s cubic-bezier(.16,1,.3,1);
+}
+.principle-list article>b{
+  transition:transform .48s cubic-bezier(.16,1,.3,1),color .36s ease;
+}
+@media(hover:hover) and (pointer:fine){
+  .principle-list article:hover{transform:translateX(12px);padding-left:0;background:rgba(36,69,255,.055)}
+  .principle-list article:hover>b{transform:translateX(8px);color:var(--blue)}
+}
+.principle-list article:focus-within{background:rgba(36,69,255,.055)}
+.principle-list article:focus-within>b{color:var(--blue)}
+@media(max-width:760px){
+  .hero-foot,.hero-index{font-size:12px}
+  .process-grid p,.cap p{font-size:17px}
+  .truth-note{font-size:14px}
+  .principle-list p{font-size:18px}
+}
+@media(max-width:430px){
+  body{font-size:17px;line-height:1.75}
+  .wordmark span{font-size:10px}
+  .eyebrow,.section-index,.hero-foot,.art-index,.art-caption,.nav-cta,.text-link,
+  .starter-label,.side-index,.side-foot,.available,.cap>span,.window-bar,
+  .preview-figure figcaption,.truth-note b,.step-no,.hero-index,.site-footer,
+  .desktop-nav a,.mobile-menu summary,.mobile-menu nav a,.ticker-toggle{font-size:12px}
+  .button{font-size:13px}
+  .cap p,.process-grid p{font-size:17px}
+  .principle-list article{transform:none;transition:background-color .3s ease}
+  .principle-list article>b{font-size:32px}
+  .principle-list h3{font-size:25px}
+  .principle-list p{font-size:17px;line-height:1.75}
+  .faq-list summary{font-size:18px}
+  .faq-list details p{font-size:17px}
+}
+@media(prefers-reduced-motion:reduce){
+  .principle-list article,.principle-list article>b{transition:none!important;transform:none!important}
+}
