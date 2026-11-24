@@ -495,3 +495,31 @@ body{font-size:var(--type-body)!important;line-height:1.76!important}
   .js-ready [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}
   .faq-answer{height:auto!important;opacity:1!important;transition:none!important}
 }
+
+
+/* R4.4 — FAQ recovery: native disclosure state, CSS-only animated answer track. */
+.faq-list details > .faq-answer{
+  display:grid!important;
+  grid-template-rows:0fr!important;
+  height:auto!important;
+  min-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:grid-template-rows .58s cubic-bezier(.22,.68,0,1.02),opacity .38s ease!important;
+}
+.faq-list details[open] > .faq-answer{grid-template-rows:1fr!important;opacity:1}
+.faq-list .faq-answer-inner{
+  min-height:0;
+  overflow:hidden;
+  transform:translateY(-8px);
+  transition:transform .52s cubic-bezier(.22,.68,0,1.02);
+}
+.faq-list details[open] > .faq-answer .faq-answer-inner{transform:translateY(0)}
+.faq-list .faq-answer p{margin:14px 30px 20px 0!important}
+.faq-list summary::after{transition:transform .42s cubic-bezier(.22,.68,0,1.02),color .25s ease!important}
+.faq-list details[open] summary::after{transform:rotate(45deg)}
+@media(prefers-reduced-motion:reduce){
+  .faq-list details > .faq-answer,.faq-list .faq-answer-inner,.faq-list summary::after{transition:none!important}
+  .faq-list details > .faq-answer{opacity:1}
+  .faq-list .faq-answer-inner{transform:none}
+}
