@@ -376,3 +376,10 @@ Allowed statuses: NOT_STARTED / IN_PROGRESS / PASS / FAIL / BLOCKED / NOT_VERIFI
 **Evidence limits:** browser screenshots and checks establish candidate rendering in this Chromium environment; they do not establish cross-browser/device parity, real-world font differences, production CSP/hosting, accessibility conformance certification, performance metrics or business conversion. Colour contrast was not fully audited with a dedicated contrast tool; focus and keyboard spot checks are not a complete accessibility audit. Motion is verified in Chromium, but not in every target browser.
 
 **Current status:** R2.1 candidate prepared and browser-inspected at requested widths; awaiting operator visual evaluation. R2 itself remains NOT_APPROVED until the operator explicitly accepts the refined candidate. No R3/R4/R5, production implementation, merge to main, deployment, DNS, spending, external contact or public release authorized. The single active Brief remains this file.
+
+
+## R4 scoped refinement — typography, micro-interactions and FAQ motion (2026-11-24)
+- Operator-requested scope: improve undersized typography (priority section 05 / THE PRINCIPLES), smooth hover/active transitions, and smooth FAQ accordion open/close. No other visual or content redesign.
+- Implementation branch: `fix/ades-type-motion-faq`; base: current `main`.
+- Changes: increase base/body and supporting text scale; enlarge principle index, headings and paragraph copy; increase FAQ/process/capability copy; harmonize easing curves for interactive affordances; wrap FAQ answer content in an animated grid-row container while retaining native `details/summary` semantics and reduced-motion overrides.
+- Verification status: implementation committed to branch by file updates; browser/rendered QA NOT_YET_VERIFIED. G4 remains pending operator review; no merge or release authorization.
