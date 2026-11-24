@@ -66,7 +66,76 @@
   }
 
 
-  // FAQ uses native details/summary and CSS-only disclosure motion.
+  // FAQ: measured WAAPI motion in both directions, with interruption-safe reversal.
+  const faqList = document.querySelector(".faq-list");
+  if (faqList) {
+    const faqStates = new WeakMap();
+    const faqItems = [...faqList.querySelectorAll("details")];
+    const syncFAQ = (details, expanded) => {
+      const summary = details.querySelector("summary");
+      if (summary) summary.setAttribute("aria-expanded", String(expanded));
+    };
+
+    faqItems.forEach((details) => {
+      const answer = details.querySelector(":scope > .faq-answer");
+      if (!answer) return;
+      syncFAQ(details, details.open);
+      answer.style.height = details.open ? "auto" : "0px";
+      answer.style.opacity = details.open ? "1" : "0";
+    });
+    root.classList.add("faq-motion-ready");
+
+    const setFinalState = (details, answer, expanded) => {
+      details.open = expanded;
+      answer.style.height = expanded ? "auto" : "0px";
+      answer.style.opacity = expanded ? "1" : "0";
+      syncFAQ(details, expanded);
+      faqStates.delete(details);
+    };
+
+    const animateFAQ = (details) => {
+      const answer = details.querySelector(":scope > .faq-answer");
+      if (!answer) return;
+      const previous = faqStates.get(details);
+      const targetOpen = previous ? !previous.targetOpen : !details.open;
+      const fromHeight = answer.getBoundingClientRect().height;
+      const fromOpacity = Number.parseFloat(getComputedStyle(answer).opacity) || 0;
+      if (previous?.animation) previous.animation.cancel();
+      if (targetOpen && !details.open) details.open = true;
+      const toHeight = targetOpen ? answer.scrollHeight : 0;
+
+      if (reduceMotion.matches || typeof answer.animate !== "function") {
+        setFinalState(details, answer, targetOpen);
+        return;
+      }
+
+      answer.style.height = `${fromHeight}px`;
+      answer.style.opacity = String(fromOpacity);
+      syncFAQ(details, targetOpen);
+      const distance = Math.abs(toHeight - fromHeight);
+      const duration = Math.min(620, Math.max(260, 250 + distance * 0.16));
+      const animation = answer.animate(
+        [{ height: `${fromHeight}px`, opacity: fromOpacity },
+         { height: `${toHeight}px`, opacity: targetOpen ? 1 : 0 }],
+        { duration, easing: "cubic-bezier(.22,.68,0,1.02)", fill: "forwards" }
+      );
+      faqStates.set(details, { animation, targetOpen });
+      animation.onfinish = () => {
+        if (faqStates.get(details)?.animation !== animation) return;
+        setFinalState(details, answer, targetOpen);
+        animation.cancel();
+      };
+    };
+
+    faqList.addEventListener("click", (event) => {
+      const summary = event.target.closest("summary");
+      if (!summary || !faqList.contains(summary)) return;
+      const details = summary.parentElement;
+      if (!(details instanceof HTMLDetailsElement)) return;
+      event.preventDefault();
+      animateFAQ(details);
+    });
+  }
 
   const revealItems = [...document.querySelectorAll("[data-reveal]")];
   if (!reduceMotion.matches && "IntersectionObserver" in window && revealItems.length) {
