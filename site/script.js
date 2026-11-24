@@ -65,6 +65,22 @@
     sections.forEach((section) => sectionObserver.observe(section));
   }
 
+
+  // Smooth FAQ disclosure: keep native details semantics and animate only its content wrapper.
+  const faqItems = [...document.querySelectorAll(".faq-list details")];
+  faqItems.forEach((details) => {
+    const summary = details.querySelector("summary");
+    const content = [...details.children].filter((node) => node !== summary);
+    if (!summary || !content.length) return;
+    const answer = document.createElement("div");
+    answer.className = "faq-answer";
+    const inner = document.createElement("div");
+    inner.className = "faq-answer-inner";
+    content.forEach((node) => inner.append(node));
+    answer.append(inner);
+    details.append(answer);
+  });
+
   const revealItems = [...document.querySelectorAll("[data-reveal]")];
   if (!reduceMotion.matches && "IntersectionObserver" in window && revealItems.length) {
     root.classList.add("js-ready");
