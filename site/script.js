@@ -66,8 +66,11 @@
   }
 
 
-  // Native details state + CSS grid animation: no JS height measurement on first open.
+  // Keep native details/summary semantics, but animate measured answer height.
+  // The summary click is intercepted so the panel stays renderable during close.
   const faqItems = [...document.querySelectorAll(".faq-list details")];
+  const faqAnimations = new WeakMap();
+  const faqExpanded = new WeakMap();
   faqItems.forEach((details) => {
     const summary = details.querySelector("summary");
     const content = [...details.children].filter((node) => node !== summary);
@@ -80,6 +83,49 @@
     content.forEach((node) => inner.append(node));
     answer.append(inner);
     details.append(answer);
+    faqExpanded.set(details, details.open);
+    answer.style.height = details.open ? "auto" : "0px";
+    answer.style.opacity = details.open ? "1" : "0";
+
+    summary.addEventListener("click", (event) => {
+      event.preventDefault();
+      const shouldOpen = !faqExpanded.get(details);
+      faqExpanded.set(details, shouldOpen);
+
+      // Preserve the exact in-flight visual height before cancelling an older animation.
+      const currentHeight = answer.getBoundingClientRect().height;
+      const currentOpacity = Number.parseFloat(getComputedStyle(answer).opacity) || 0;
+      const previous = faqAnimations.get(details);
+      if (previous) previous.cancel();
+
+      if (shouldOpen) details.open = true;
+      answer.style.height = `${currentHeight}px`;
+      answer.style.opacity = String(currentOpacity);
+
+      if (reduceMotion.matches || typeof answer.animate !== "function") {
+        details.open = shouldOpen;
+        answer.style.height = shouldOpen ? "auto" : "0px";
+        answer.style.opacity = shouldOpen ? "1" : "0";
+        return;
+      }
+
+      requestAnimationFrame(() => {
+        const from = answer.getBoundingClientRect().height;
+        const to = shouldOpen ? answer.scrollHeight : 0;
+        const animation = answer.animate(
+          [{ height: `${from}px`, opacity: currentOpacity }, { height: `${to}px`, opacity: shouldOpen ? 1 : 0 }],
+          { duration: 420, easing: "cubic-bezier(.16,1,.3,1)" }
+        );
+        faqAnimations.set(details, animation);
+        animation.onfinish = () => {
+          if (faqExpanded.get(details) !== shouldOpen) return;
+          faqAnimations.delete(details);
+          details.open = shouldOpen;
+          answer.style.height = shouldOpen ? "auto" : "0px";
+          answer.style.opacity = shouldOpen ? "1" : "0";
+        };
+      });
+    });
   });
 
   const revealItems = [...document.querySelectorAll("[data-reveal]")];
@@ -92,9 +138,9 @@
           activeObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -7% 0px" });
+    }, { threshold: 0.08, rootMargin: "0px 0px -4% 0px" });
     revealItems.forEach((item, index) => {
-      item.style.transitionDelay = `${(index % 3) * 65}ms`;
+      item.style.transitionDelay = `${(index % 3) * 40}ms`;
       observer.observe(item);
     });
   } else {
