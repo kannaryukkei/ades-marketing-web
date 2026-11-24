@@ -66,7 +66,7 @@
   }
 
 
-  // FAQ disclosure: measure the opened content before animating, including its first open.
+  // Native details state + CSS grid animation: no JS height measurement on first open.
   const faqItems = [...document.querySelectorAll(".faq-list details")];
   faqItems.forEach((details) => {
     const summary = details.querySelector("summary");
@@ -80,59 +80,6 @@
     content.forEach((node) => inner.append(node));
     answer.append(inner);
     details.append(answer);
-
-    let activeAnimation = null;
-    summary.addEventListener("click", (event) => {
-      event.preventDefault();
-
-      // Capture the in-flight visual state before cancelling a previous toggle.
-      const computed = window.getComputedStyle(answer);
-      const fromHeight = answer.getBoundingClientRect().height;
-      const fromOpacity = Number.parseFloat(computed.opacity) || 0;
-      if (activeAnimation) activeAnimation.cancel();
-
-      const opening = !details.open;
-      answer.style.height = `${fromHeight}px`;
-      answer.style.opacity = String(fromOpacity);
-
-      if (opening) {
-        details.open = true;
-        // Flush the closed-to-open layout before measuring the intrinsic answer.
-        void answer.getBoundingClientRect();
-      }
-
-      const toHeight = opening ? inner.getBoundingClientRect().height : 0;
-      const reduced = reduceMotion.matches;
-      const duration = reduced ? 0 : 560;
-
-      if (duration === 0) {
-        answer.style.height = opening ? "" : "0px";
-        answer.style.opacity = opening ? "" : "0";
-        if (!opening) details.open = false;
-        activeAnimation = null;
-        return;
-      }
-
-      const animation = answer.animate(
-        [
-          { height: `${fromHeight}px`, opacity: fromOpacity },
-          { height: `${toHeight}px`, opacity: opening ? 1 : 0 }
-        ],
-        { duration, easing: "cubic-bezier(.16,1,.3,1)", fill: "forwards" }
-      );
-      activeAnimation = animation;
-
-      animation.onfinish = () => {
-        if (activeAnimation !== animation) return;
-        if (!opening) details.open = false;
-        answer.style.height = "";
-        answer.style.opacity = "";
-        activeAnimation = null;
-      };
-      animation.oncancel = () => {
-        if (activeAnimation === animation) activeAnimation = null;
-      };
-    });
   });
 
   const revealItems = [...document.querySelectorAll("[data-reveal]")];
