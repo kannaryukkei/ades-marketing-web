@@ -278,3 +278,7 @@ body{font-size:17px;line-height:1.7}
 @media(prefers-reduced-motion:reduce){
  .faq-answer,.faq-list summary,.faq-list summary::after{transition:none!important}
 }
+
+/* The FAQ wrapper is height-animated by script in both directions. */
+.faq-answer{display:block;height:auto;overflow:hidden;opacity:1;transition:none}
+.faq-answer-inner{overflow:hidden}
