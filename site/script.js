@@ -79,6 +79,30 @@
     content.forEach((node) => inner.append(node));
     answer.append(inner);
     details.append(answer);
+    let activeAnimation = null;
+    summary.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (activeAnimation) activeAnimation.cancel();
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const duration = reduced ? 0 : 420;
+      if (!details.open) {
+        details.open = true;
+        answer.style.height = "0px";
+        const targetHeight = inner.scrollHeight;
+        activeAnimation = answer.animate(
+          [{ height: "0px", opacity: 0 }, { height: targetHeight + "px", opacity: 1 }],
+          { duration, easing: "cubic-bezier(.22,.68,0,1.02)" }
+        );
+        activeAnimation.onfinish = () => { answer.style.height = ""; activeAnimation = null; };
+      } else {
+        const currentHeight = answer.getBoundingClientRect().height;
+        activeAnimation = answer.animate(
+          [{ height: currentHeight + "px", opacity: 1 }, { height: "0px", opacity: 0 }],
+          { duration, easing: "cubic-bezier(.22,.68,0,1.02)" }
+        );
+        activeAnimation.onfinish = () => { details.open = false; answer.style.height = ""; activeAnimation = null; };
+      }
+    });
   });
 
   const revealItems = [...document.querySelectorAll("[data-reveal]")];
