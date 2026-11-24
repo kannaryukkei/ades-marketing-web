@@ -71,6 +71,7 @@
   const faqItems = [...document.querySelectorAll(".faq-list details")];
   const faqAnimations = new WeakMap();
   const faqExpanded = new WeakMap();
+  const faqGeneration = new WeakMap();
   faqItems.forEach((details) => {
     const summary = details.querySelector("summary");
     const content = [...details.children].filter((node) => node !== summary);
@@ -91,6 +92,8 @@
       event.preventDefault();
       const shouldOpen = !faqExpanded.get(details);
       faqExpanded.set(details, shouldOpen);
+      const generation = (faqGeneration.get(details) || 0) + 1;
+      faqGeneration.set(details, generation);
 
       // Preserve the exact in-flight visual height before cancelling an older animation.
       const currentHeight = answer.getBoundingClientRect().height;
@@ -110,6 +113,7 @@
       }
 
       requestAnimationFrame(() => {
+        if (faqGeneration.get(details) !== generation) return;
         const from = answer.getBoundingClientRect().height;
         const to = shouldOpen ? answer.scrollHeight : 0;
         const animation = answer.animate(
@@ -118,7 +122,7 @@
         );
         faqAnimations.set(details, animation);
         animation.onfinish = () => {
-          if (faqExpanded.get(details) !== shouldOpen) return;
+          if (faqGeneration.get(details) !== generation || faqExpanded.get(details) !== shouldOpen) return;
           faqAnimations.delete(details);
           details.open = shouldOpen;
           answer.style.height = shouldOpen ? "auto" : "0px";
