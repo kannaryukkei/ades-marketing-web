@@ -66,7 +66,7 @@
   }
 
 
-  // Smooth FAQ disclosure with interruption-safe height animation.
+  // FAQ disclosure: measure the opened content before animating, including its first open.
   const faqItems = [...document.querySelectorAll(".faq-list details")];
   faqItems.forEach((details) => {
     const summary = details.querySelector("summary");
@@ -84,27 +84,53 @@
     let activeAnimation = null;
     summary.addEventListener("click", (event) => {
       event.preventDefault();
-      const currentHeight = answer.getBoundingClientRect().height;
+
+      // Capture the in-flight visual state before cancelling a previous toggle.
+      const computed = window.getComputedStyle(answer);
+      const fromHeight = answer.getBoundingClientRect().height;
+      const fromOpacity = Number.parseFloat(computed.opacity) || 0;
       if (activeAnimation) activeAnimation.cancel();
-      answer.style.height = currentHeight + "px";
 
       const opening = !details.open;
-      if (opening) details.open = true;
-      const from = currentHeight;
-      const to = opening ? inner.scrollHeight : 0;
-      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const duration = reduced ? 0 : 520;
+      answer.style.height = `${fromHeight}px`;
+      answer.style.opacity = String(fromOpacity);
 
-      activeAnimation = answer.animate(
-        [{ height: from + "px", opacity: opening ? 0.72 : 1 },
-         { height: to + "px", opacity: opening ? 1 : 0.72 }],
-        { duration, easing: "cubic-bezier(.2,.72,.2,1)", fill: "forwards" }
+      if (opening) {
+        details.open = true;
+        // Flush the closed-to-open layout before measuring the intrinsic answer.
+        void answer.getBoundingClientRect();
+      }
+
+      const toHeight = opening ? inner.getBoundingClientRect().height : 0;
+      const reduced = reduceMotion.matches;
+      const duration = reduced ? 0 : 560;
+
+      if (duration === 0) {
+        answer.style.height = opening ? "" : "0px";
+        answer.style.opacity = opening ? "" : "0";
+        if (!opening) details.open = false;
+        activeAnimation = null;
+        return;
+      }
+
+      const animation = answer.animate(
+        [
+          { height: `${fromHeight}px`, opacity: fromOpacity },
+          { height: `${toHeight}px`, opacity: opening ? 1 : 0 }
+        ],
+        { duration, easing: "cubic-bezier(.16,1,.3,1)", fill: "forwards" }
       );
-      activeAnimation.onfinish = () => {
+      activeAnimation = animation;
+
+      animation.onfinish = () => {
+        if (activeAnimation !== animation) return;
         if (!opening) details.open = false;
         answer.style.height = "";
         answer.style.opacity = "";
         activeAnimation = null;
+      };
+      animation.oncancel = () => {
+        if (activeAnimation === animation) activeAnimation = null;
       };
     });
   });
