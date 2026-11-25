@@ -6,6 +6,7 @@ ADES marketing website — internal studio-development REDO. Approved direction:
 
 - Website repository: https://github.com/kannaryukkei/ades-marketing-web
 - Website source and intended static publish directory: `site/` (do not publish the repository root; it contains the active Project Brief and internal R1/R2 exploration records).
+- Current `site/` publish inventory: `_headers`, `favicon.svg`, `index.html`, `styles.css`, `script.js`.
 - Stack: static HTML, CSS and vanilla JavaScript. No package manager, build step, backend, database, CMS, analytics or form submission.
 - Primary visitor action: operator-confirmed WhatsApp link `https://wa.me/6281246027946`.
 - Current offers: Starter available (one page / landing page); Business available (multi-page website; page count is the only confirmed distinction); Custom open for inquiry (scope, feasibility, price and timeline after consultation; no specific features promised).
