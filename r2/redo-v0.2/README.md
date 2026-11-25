@@ -1,6 +1,6 @@
 # ADES REDO v0.2 — R2 Synthesis Candidate
 
-**Status:** R2 candidate complete; awaiting mode-correct R3 self-assessment and explicit operator direction approval before R4.  
+**Status:** R2 candidate complete; R3 self-assessment complete (non-independent); awaiting explicit operator direction approval before R4.  
 **PRD:** REDO v0.2, approved 2026-11-26.  
 **Research Pack:** frozen 2026-11-26.  
 **R1 set:** `../r1/redo-v0.2/` (three concepts; previous-cycle R1 files remain untouched).
@@ -76,6 +76,20 @@
 - **Reject:** unverified client proof; public NARA Objects use until rights are verified; Nusa Forma screenshot as documentary evidence; localhost iframe; invented pricing/timelines/features; full dark dashboard aesthetic; excessive playful cards; unnecessary libraries, remote fonts and motion.
 - **Highest-value change for memorability:** a distinctive modular hero that makes the ADES method visible before the visitor reaches the package comparison, without relying on unsupported proof.
 - **Most generic element to keep improving:** FAQ and process remain familiar patterns; R4 should add section-specific art direction only if it improves comprehension, not decoration.
+
+## R3 — single-agent self-assessment (not an independent jury)
+
+**Assessment outcome:** Lead recommendation **SELECT this R2 direction**, subject to explicit operator approval. This is a non-independent self-assessment by the same selected Lead/Execution/Governance identity under `single_agent_end_to_end`; no panel, external evaluator, consensus or independent jury is claimed.
+
+- **PRD / visitor task:** PASS — one-page static-first scope, three offer states, Custom discovery boundary, honest demo disclosure and WhatsApp inquiry path are represented.
+- **Creative differentiation:** PASS — a distinct warm editorial/modular direction; not a palette swap or generic SaaS dashboard.
+- **Responsive / interaction evidence:** PASS within the controlled renderer — six viewport widths, no horizontal overflow, menu/keyboard Escape/focus return, native FAQ keyboard operation, reduced-motion fallback, no page errors.
+- **Truth / rights:** PASS with limits — no fabricated testimonials, metrics, client logos, prices or feature promises; Nusa Forma is labelled fictional internal concept. No third-party code or media copied.
+- **Strongest moments:** first-screen proposition plus modular hero composition; offer cards clearly communicate one-page / multi-page / discovery-first boundaries; concept disclosure is explicit.
+- **Weakest / most generic moments:** process and FAQ use familiar patterns; the page has no rights-cleared real client work or documentary imagery. These are honest constraints, not a reason to fabricate proof.
+- **Highest-value correction for R4:** keep the hero and offer clarity; refine FAQ/process visual pacing only where it improves comprehension; confirm public language and any publishable showcase rights before release.
+- **Material findings:** no CRITICAL or MAJOR issue observed in controlled source/render checks. MINOR/open: final language choice; Starter price/inclusions; Business detail beyond page count; Custom acceptance policy; rights-cleared work examples. NOT_VERIFIED: external WhatsApp navigation, live network/server delivery, full WCAG/screen-reader audit, performance metrics, cross-browser/device coverage, real-user task testing, production hosting/domain.
+- **Recommendation:** SELECT the R2 candidate as the direction to carry into R4 after operator approval. No R4 implementation has started.
 
 ## Decision boundary
 
