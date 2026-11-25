@@ -49,7 +49,10 @@
     document.querySelector('#detail-number').textContent = item.number;
     document.querySelector('#detail-status').textContent = item.status;
     document.querySelector('#detail-symbol').textContent = item.symbol;
-    const serviceTitle = document.querySelector('#detail-title');\n    const serviceEmphasis = document.createElement('em');\n    serviceEmphasis.textContent = item.title[1];\n    serviceTitle.replaceChildren(document.createTextNode(item.title[0]), document.createElement('br'), serviceEmphasis);
+    const serviceTitle = document.querySelector('#detail-title');
+    const serviceEmphasis = document.createElement('em');
+    serviceEmphasis.textContent = item.title[1];
+    serviceTitle.replaceChildren(document.createTextNode(item.title[0]), document.createElement('br'), serviceEmphasis);
     document.querySelector('#detail-description').textContent = item.description;
     document.querySelector('#detail-points').replaceChildren(...item.points.map(point => {
       const li = document.createElement('li'); li.textContent = point; return li;
@@ -93,7 +96,10 @@
     });
     methodPanel.setAttribute('aria-labelledby', active.id);
     document.querySelector('#method-overline').textContent = item.overline;
-    const methodTitle = document.querySelector('#method-title');\n    const methodEmphasis = document.createElement('em');\n    methodEmphasis.textContent = item.title[1];\n    methodTitle.replaceChildren(document.createTextNode(item.title[0]), document.createElement('br'), methodEmphasis);
+    const methodTitle = document.querySelector('#method-title');
+    const methodEmphasis = document.createElement('em');
+    methodEmphasis.textContent = item.title[1];
+    methodTitle.replaceChildren(document.createTextNode(item.title[0]), document.createElement('br'), methodEmphasis);
     document.querySelector('#method-text').textContent = item.text;
     document.querySelector('#method-output').textContent = item.output;
     document.querySelector('#method-graphic-label').textContent = item.graphic;
