@@ -84,6 +84,14 @@
     {overline:'03 — TURN DIRECTION INTO FORM', title:['Make it','work in the world.'], text:'Arah yang disepakati diterjemahkan menjadi implementasi frontend yang responsif, dengan perhatian pada struktur, keterbacaan, dan interaksi.', output:'OUTPUT / RESPONSIVE FRONTEND', graphic:'03 / BUILD WITH INTENT'},
     {overline:'04 — CHECK THE EXPERIENCE', title:['Details make','the difference.'], text:'Kami memeriksa tampilan, navigasi, interaksi, responsivitas, dan kesiapan handover. Temuan diperbaiki sebelum hasil diserahkan.', output:'OUTPUT / REVIEWED HANDOVER', graphic:'04 / VERIFY THE DETAILS'}
   ];
+  const methodTablist = document.querySelector('.method-list');
+  const methodOrientation = window.matchMedia('(max-width: 700px)');
+  const syncMethodOrientation = () => {
+    methodTablist.setAttribute('aria-orientation', methodOrientation.matches ? 'horizontal' : 'vertical');
+  };
+  syncMethodOrientation();
+  methodOrientation.addEventListener('change', syncMethodOrientation);
+
   const methodTabs = [...document.querySelectorAll('.method-step')];
   const methodPanel = document.querySelector('#method-detail');
   function selectMethod(index, focusTab = false) {
