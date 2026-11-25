@@ -3,7 +3,7 @@
 **Status:** R2 candidate complete; R3 self-assessment complete (non-independent); awaiting explicit operator direction approval before R4.  
 **PRD:** REDO v0.2, approved 2026-11-26.  
 **Research Pack:** frozen 2026-11-26.  
-**R1 set:** `../r1/redo-v0.2/` (three concepts; previous-cycle R1 files remain untouched).
+**R1 set:** `../../r1/redo-v0.2/` (three concepts; previous-cycle R1 files remain untouched).
 
 ## Candidate
 
