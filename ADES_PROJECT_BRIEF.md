@@ -635,3 +635,9 @@ Allowed statuses: NOT_STARTED / IN_PROGRESS / PASS / FAIL / BLOCKED / NOT_VERIFI
 - Favicon SVG was parsed as XML and rendered via the controlled Chromium `page.set_content` path at 192×192 CSS display size with no page errors. The browser reported a 150×150 intrinsic size when width/height were omitted; added explicit SVG `width="64" height="64"` in commit `5c94174fee88c15b745c608787db7939d32ca5a1` (blob `853f57d4f078fa3c7179a4b04e77d5fd2c778991`). The post-fix favicon was not separately re-rendered; browser verification of the actual linked favicon remains NOT_VERIFIED.
 - Local `file://` navigation is blocked by the environment. This does not invalidate the earlier controlled `page.set_content` smoke, but neither path has rendered the complete exact-current website. The exact current HTML/CSS/JS integration, local-server relative assets and full browser interaction matrix remain NOT_VERIFIED.
 - Latest code commits include scroll-anchor CSS `7a99586f5110ce690d148a49facf3c7d14cfb3ef`, FAQ accessibility HTML `0d772b73d3513685d094a8693153fc7dd2d01fd0`, and favicon dimensions `5c94174fee88c15b745c608787db7939d32ca5a1`. G3/G4 remain IN_PROGRESS; G5/G6 NOT_STARTED.
+
+
+## Responsive ARIA tab orientation refinement — 2026-11-26
+- Declared the service tablist vertical. The process tablist now reports `aria-orientation="vertical"` above 700px and updates to `horizontal` at the same 700px breakpoint where CSS switches it to a four-column row; a media-query change listener keeps the attribute synchronized on viewport resize.
+- HTML commit: `4f44f49ba16572b7147d2cfb84c2ac4d0cc479c2`; JS commit: `ba19c86fa147bb6fe9b71995cb7c1eb30e30797d`. Existing two-axis arrow-key handling and Home/End remain in place.
+- This is source-level accessibility refinement. Assistive-technology/browser announcement and responsive resize behavior remain NOT_VERIFIED until the exact page is rendered and exercised.
