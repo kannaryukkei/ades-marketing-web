@@ -67,11 +67,11 @@
   serviceTabs.forEach((tab, index) => {
     tab.addEventListener('click', () => selectService(tab.dataset.service));
     tab.addEventListener('keydown', event => {
-      if (!['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) return;
+      if (!['ArrowDown', 'ArrowUp', 'ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(event.key)) return;
       event.preventDefault();
       let next = index;
-      if (event.key === 'ArrowDown') next = (index + 1) % serviceTabs.length;
-      if (event.key === 'ArrowUp') next = (index - 1 + serviceTabs.length) % serviceTabs.length;
+      if (event.key === 'ArrowDown' || event.key === 'ArrowRight') next = (index + 1) % serviceTabs.length;
+      if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') next = (index - 1 + serviceTabs.length) % serviceTabs.length;
       if (event.key === 'Home') next = 0;
       if (event.key === 'End') next = serviceTabs.length - 1;
       selectService(serviceTabs[next].dataset.service, true);
@@ -108,11 +108,11 @@
   methodTabs.forEach((tab, index) => {
     tab.addEventListener('click', () => selectMethod(index));
     tab.addEventListener('keydown', event => {
-      if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(event.key)) return;
+      if (!['ArrowDown', 'ArrowUp', 'ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(event.key)) return;
       event.preventDefault();
       let next = index;
-      if (event.key === 'ArrowRight') next = (index + 1) % methodTabs.length;
-      if (event.key === 'ArrowLeft') next = (index - 1 + methodTabs.length) % methodTabs.length;
+      if (event.key === 'ArrowDown' || event.key === 'ArrowRight') next = (index + 1) % methodTabs.length;
+      if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') next = (index - 1 + methodTabs.length) % methodTabs.length;
       if (event.key === 'Home') next = 0;
       if (event.key === 'End') next = methodTabs.length - 1;
       selectMethod(next, true);
