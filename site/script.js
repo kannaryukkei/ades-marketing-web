@@ -16,19 +16,19 @@
 
   const services = {
     starter: {
-      number: '01 / STARTER', status: 'TERSEDIA', symbol: 'S.', title: 'Satu halaman.<br><em>Satu tujuan.</em>',
+      number: '01 / STARTER', status: 'TERSEDIA', symbol: 'S.', title: ['Satu halaman.', 'Satu tujuan.'],
       description: 'Landing page yang fokus untuk memperkenalkan bisnis atau satu penawaran dengan alur informasi yang terarah.',
       points: ['One-page website', 'Struktur informasi yang fokus', 'Jalur konsultasi yang jelas'],
       cta: 'Diskusikan Starter', message: 'Halo ADES, saya tertarik dengan layanan Starter.', foot: '01 — A FOCUSED BEGINNING'
     },
     business: {
-      number: '02 / BUSINESS', status: 'TERSEDIA', symbol: 'B.', title: 'Lebih banyak ruang.<br><em>Lebih banyak halaman.</em>',
+      number: '02 / BUSINESS', status: 'TERSEDIA', symbol: 'B.', title: ['Lebih banyak ruang.', 'Lebih banyak halaman.'],
       description: 'Website multi-halaman untuk kebutuhan informasi bisnis yang lebih luas. Jumlah halaman adalah pembeda yang telah dikonfirmasi; detail lain dibahas saat konsultasi.',
       points: ['Website multi-halaman', 'Informasi bisnis yang lebih luas', 'Struktur dan jumlah halaman dibahas bersama'],
       cta: 'Diskusikan Business', message: 'Halo ADES, saya ingin berdiskusi tentang layanan Business (website multi-halaman).', foot: '02 — ROOM TO EXPLAIN MORE'
     },
     custom: {
-      number: '03 / CUSTOM', status: 'INQUIRY TERBUKA', symbol: 'C.', title: 'Mulai dari<br><em>percakapan.</em>',
+      number: '03 / CUSTOM', status: 'INQUIRY TERBUKA', symbol: 'C.', title: ['Mulai dari', 'percakapan.'],
       description: 'Untuk kebutuhan yang belum terwakili oleh pilihan awal. Kita pahami konteksnya lebih dulu sebelum menentukan ruang lingkup dan kelayakan.',
       points: ['Konsultasi kebutuhan', 'Discovery dan peninjauan kelayakan', 'Harga dan timeline setelah pembahasan'],
       cta: 'Bahas kebutuhan khusus', message: 'Halo ADES, saya ingin konsultasi mengenai kebutuhan website Custom.', foot: '03 — DEFINE THE RIGHT SCOPE'
@@ -49,7 +49,7 @@
     document.querySelector('#detail-number').textContent = item.number;
     document.querySelector('#detail-status').textContent = item.status;
     document.querySelector('#detail-symbol').textContent = item.symbol;
-    document.querySelector('#detail-title').innerHTML = item.title;
+    const serviceTitle = document.querySelector('#detail-title');\n    const serviceEmphasis = document.createElement('em');\n    serviceEmphasis.textContent = item.title[1];\n    serviceTitle.replaceChildren(document.createTextNode(item.title[0]), document.createElement('br'), serviceEmphasis);
     document.querySelector('#detail-description').textContent = item.description;
     document.querySelector('#detail-points').replaceChildren(...item.points.map(point => {
       const li = document.createElement('li'); li.textContent = point; return li;
@@ -76,10 +76,10 @@
   });
 
   const method = [
-    {overline:'01 — UNDERSTAND BEFORE DESIGN', title:'Start with<br><em>understanding.</em>', text:'Kami mempelajari konteks bisnis, audiens, kebutuhan, dan tujuan website. Hasilnya menjadi dasar untuk menentukan apa yang perlu disampaikan dan diprioritaskan.', output:'OUTPUT / SHARED UNDERSTANDING', graphic:'01 / ASK BETTER QUESTIONS'},
-    {overline:'02 — EXPLORE THE POSSIBILITIES', title:'Explore a<br><em>clear direction.</em>', text:'Kami mengeksplorasi alternatif arah desain dan struktur pengalaman. Pilihan dibahas berdasarkan konteks dan tujuan, bukan sekadar preferensi visual.', output:'OUTPUT / AGREED DESIGN DIRECTION', graphic:'02 / TEST THE OPTIONS'},
-    {overline:'03 — TURN DIRECTION INTO FORM', title:'Make it<br><em>work in the world.</em>', text:'Arah yang disepakati diterjemahkan menjadi implementasi frontend yang responsif, dengan perhatian pada struktur, keterbacaan, dan interaksi.', output:'OUTPUT / RESPONSIVE FRONTEND', graphic:'03 / BUILD WITH INTENT'},
-    {overline:'04 — CHECK THE EXPERIENCE', title:'Details make<br><em>the difference.</em>', text:'Kami memeriksa tampilan, navigasi, interaksi, responsivitas, dan kesiapan handover. Temuan diperbaiki sebelum hasil diserahkan.', output:'OUTPUT / REVIEWED HANDOVER', graphic:'04 / VERIFY THE DETAILS'}
+    {overline:'01 — UNDERSTAND BEFORE DESIGN', title:['Start with','understanding.'], text:'Kami mempelajari konteks bisnis, audiens, kebutuhan, dan tujuan website. Hasilnya menjadi dasar untuk menentukan apa yang perlu disampaikan dan diprioritaskan.', output:'OUTPUT / SHARED UNDERSTANDING', graphic:'01 / ASK BETTER QUESTIONS'},
+    {overline:'02 — EXPLORE THE POSSIBILITIES', title:['Explore a','clear direction.'], text:'Kami mengeksplorasi alternatif arah desain dan struktur pengalaman. Pilihan dibahas berdasarkan konteks dan tujuan, bukan sekadar preferensi visual.', output:'OUTPUT / AGREED DESIGN DIRECTION', graphic:'02 / TEST THE OPTIONS'},
+    {overline:'03 — TURN DIRECTION INTO FORM', title:['Make it','work in the world.'], text:'Arah yang disepakati diterjemahkan menjadi implementasi frontend yang responsif, dengan perhatian pada struktur, keterbacaan, dan interaksi.', output:'OUTPUT / RESPONSIVE FRONTEND', graphic:'03 / BUILD WITH INTENT'},
+    {overline:'04 — CHECK THE EXPERIENCE', title:['Details make','the difference.'], text:'Kami memeriksa tampilan, navigasi, interaksi, responsivitas, dan kesiapan handover. Temuan diperbaiki sebelum hasil diserahkan.', output:'OUTPUT / REVIEWED HANDOVER', graphic:'04 / VERIFY THE DETAILS'}
   ];
   const methodTabs = [...document.querySelectorAll('.method-step')];
   const methodPanel = document.querySelector('#method-detail');
@@ -93,7 +93,7 @@
     });
     methodPanel.setAttribute('aria-labelledby', active.id);
     document.querySelector('#method-overline').textContent = item.overline;
-    document.querySelector('#method-title').innerHTML = item.title;
+    const methodTitle = document.querySelector('#method-title');\n    const methodEmphasis = document.createElement('em');\n    methodEmphasis.textContent = item.title[1];\n    methodTitle.replaceChildren(document.createTextNode(item.title[0]), document.createElement('br'), methodEmphasis);
     document.querySelector('#method-text').textContent = item.text;
     document.querySelector('#method-output').textContent = item.output;
     document.querySelector('#method-graphic-label').textContent = item.graphic;
