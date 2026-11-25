@@ -9,7 +9,7 @@ ADES marketing website — internal studio-development REDO. Approved direction:
 - Stack: static HTML, CSS and vanilla JavaScript. No package manager, build step, backend, database, CMS, analytics or form submission.
 - Primary visitor action: operator-confirmed WhatsApp link `https://wa.me/6281246027946`.
 - Current offers: Starter available (one page / landing page); Business available (multi-page website; page count is the only confirmed distinction); Custom open for inquiry (scope, feasibility, price and timeline after consultation; no specific features promised).
-- The Nusa Forma Studio showcase is a fictional internal concept/demo, not client work, not a completed client project and not proof of client outcomes.
+- The active website contains no portfolio or fictional-project showcase; it focuses on ADES, its offers, process and consultation path. Historical concept artifacts remain internal repository records only.
 - The REDO production candidate is on branch `redo/prd-v0.2-research`; `main` has not been changed. The page includes `noindex,nofollow`. This is not access control.
 - Hosting provider, custom domain and canonical hostname have not been selected. No deployment, DNS change or public release is authorized.
 - See the single active `ADES_PROJECT_BRIEF.md` for current approvals, evidence, gate status and limitations.
