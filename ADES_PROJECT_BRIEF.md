@@ -620,3 +620,10 @@ Allowed statuses: NOT_STARTED / IN_PROGRESS / PASS / FAIL / BLOCKED / NOT_VERIFI
 - Removed an unsubstantiated “INDEPENDENT STUDIO” phrase from the hero graphic and replaced it with the service-descriptive label “DESIGN & DEVELOPMENT / WITH CLEAR INTENT”; no new business facts were introduced.
 - Updated README to enumerate the exact intended publish directory contents: `_headers`, `favicon.svg`, `index.html`, `styles.css`, `script.js`. The repository root remains excluded from publishing.
 - HTML commit: `a8f0cb385dad948df3c4f94b435136438a36cf84`; favicon commit: `6ef4952f82012cc377c65ecb2920e6c07cde5f80`; README commit: `a06018f951deed9133fb2784a4055844ce4f3263`. These are source/content refinements only. Exact-source browser render, favicon browser check, local-server path and operator candidate approval remain NOT_VERIFIED.
+
+
+## Navigation and assistive-technology refinements — 2026-11-26
+- Added `scroll-margin-top:96px` to the three header-navigation section targets (`#layanan`, `#metode`, `#faq`) so the sticky header does not cover their start positions during anchor navigation. CSS commit: `7a99586f5110ce690d148a49facf3c7d14cfb3ef`; blob: `e94e1f34f74a1c10b569c2e3dc2c5252431e4a55`.
+- Marked the four decorative FAQ plus glyphs `aria-hidden="true"` so assistive technology announces the question/expanded state without redundant punctuation. HTML commit: `0d772b73d3513685d094a8693153fc7dd2d01fd0`; blob: `524387e497a5190739ae554fd24036b7e41f83f4`.
+- Source inspection confirms explicit `:focus-visible` styling, visible skip-link focus, reduced-motion CSS override, semantic main/nav landmarks, four native FAQ disclosures, and menu focus return in JS. These remain source observations; no exact-current-page browser execution has been performed.
+- G3/G4 remain IN_PROGRESS. Continue internal QA without asking the operator for screenshots; operator review/approval is still a separate, version-specific gate and has not been inferred from “lanjut.”
