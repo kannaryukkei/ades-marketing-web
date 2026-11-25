@@ -532,3 +532,11 @@ Allowed statuses: NOT_STARTED / IN_PROGRESS / PASS / FAIL / BLOCKED / NOT_VERIFI
 - Native `details/summary` remains the semantic fallback when JavaScript is unavailable. The custom animation handler only takes ownership after safe initial panel states are set.
 - Source checks: pending re-fetch and structural checks. Browser-rendered QA for open → close → reopen → repeated rapid reversals, all five panels, keyboard, reduced-motion and responsive viewports remains NOT_VERIFIED. No visual/behavioural pass is claimed.
 - Gate remains G4 IN_PROGRESS. No merge, deployment, DNS, spending, third-party contact or public release is authorized.
+
+
+## Operator direction — remove Nusa Forma and focus ADES (2026-11-26)
+- Operator explicitly requested that the Nusa Forma section be removed and that the website focus on making a strong ADES marketing website first.
+- Applied on `redo/prd-v0.2-research`: removed the entire fictional Nusa Forma / internal concept showcase section, its navigation item, related showcase CSS, and all Nusa Forma copy from the active `site/` implementation. No replacement portfolio, client work, testimonial, or invented proof was added.
+- Simplified section numbering to Services 01, Process 02, FAQ 03. Existing approved Warm Editorial / Signal Architecture visual direction, ADES service descriptions, offer availability, process, FAQ, and WhatsApp CTA are retained.
+- This is a content/structure refinement within the approved ADES REDO direction, not a new PRD or design-direction change. Historical research and prior concept artifacts remain historical records; they are not active website content.
+- Browser re-render and interaction QA for this exact post-removal commit: NOT_YET_VERIFIED. No deployment, DNS, merge to main, public release, spending, or third-party contact authorized.
